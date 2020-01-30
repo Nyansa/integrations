@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/access_point_rogue.json",
+  "type": "object",
+  "title": "The Access Point Rogue Schema",
+  "required": [
+    "ap_rogues"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ap_rogues": {
+      "$id": "#/properties/ap_rogues",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/ap_rogues/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "rogues"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/ap_rogues/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point."
+          },
+          "rogues": {
+            "$id": "#/properties/ap_rogues/items/properties/rogues",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/ap_rogues/items/properties/rogues/items",
+              "type": "object",
+              "required": [
+                "rf_band",
+                "rogue_bssid",
+                "rogue_essid",
+                "snr_db",
+                "rssi"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "rf_band": {
+                  "$id": "#/properties/ap_rogues/items/properties/rogues/items/properties/rf_band",
+                  "$ref": "definitions.json#/rf_band",
+                  "description": "The radio RF band of the rogue access point radio."
+                },
+                "rogue_bssid": {
+                  "$id": "#/properties/ap_rogues/items/properties/rogues/items/properties/rogue_bssid",
+                  "$ref": "definitions.json#/mac_address",
+                  "description": "The BSSID of the rogue access point radio."
+                },
+                "rogue_essid": {
+                  "$id": "#/properties/ap_rogues/items/properties/rogues/items/properties/rogue_essid",
+                  "type": "string",
+                  "description": "The ESSID of the rogue access point radio.",
+                  "default": "",
+                  "examples": [
+                    "guest"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "snr_db": {
+                  "$id": "#/properties/ap_rogues/items/properties/rogues/items/properties/snr_db",
+                  "type": "integer",
+                  "description": "The SnR in dB of the rogue access point radio.",
+                  "default": 0,
+                  "examples": [
+                    19
+                  ]
+                },
+                "rssi": {
+                  "$id": "#/properties/ap_rogues/items/properties/rogues/items/properties/rssi",
+                  "type": "number",
+                  "description": "The average Rssi of the rogue access point radio.",
+                  "default": 0.0,
+                  "examples": [
+                    -68.8
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

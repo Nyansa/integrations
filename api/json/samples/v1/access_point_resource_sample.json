@@ -1,0 +1,18 @@
+{
+  "ap_resources": [
+    {
+      "mac": "08ECF5A46B60",
+      "timestamp": 1563230173,
+      "mem_total_kb": 514916,
+      "mem_used_kb": 106240,
+      "cpu_util_pct": 20
+    },
+    {
+      "mac": "08ECF5394224",
+      "timestamp": 1563230173,
+      "mem_total_kb": 514916,
+      "mem_used_kb": 97544,
+      "cpu_util_pct": 15
+    }
+  ]
+}

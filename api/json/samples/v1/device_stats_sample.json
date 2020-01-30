@@ -1,0 +1,32 @@
+{
+  "device_stats": [
+    {
+      "mac": "4083DEDFC392",
+      "timestamp": 1563230173,
+      "tx_bytes": 740989,
+      "rx_bytes": 1611240,
+      "tx_packets": 2452,
+      "rx_packets": 4416,
+      "tx_retries": 299,
+      "rx_retries": 607,
+      "snr_db": 34,
+      "noise_floor": -96,
+      "rssi": -58,
+      "tx_rate": 173.3
+    },
+    {
+      "mac": "A06A447B98C6",
+      "timestamp": 1563230173,
+      "tx_bytes": 19235775,
+      "rx_bytes": 27410184,
+      "tx_packets": 90943,
+      "rx_packets": 125872,
+      "tx_retries": 2403,
+      "rx_retries": 3802,
+      "snr_db": 24,
+      "noise_floor": -92,
+      "rssi": -59,
+      "tx_rate": 115.5
+    }
+  ]
+}

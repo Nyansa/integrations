@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/access_point_radio.json",
+  "type": "object",
+  "title": "The Access Point Radio Schema",
+  "required": [
+    "ap_radios"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ap_radios": {
+      "$id": "#/properties/ap_radios",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/ap_radios/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "timestamp",
+          "radio_infos"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/ap_radios/items/properties/ap_mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point."
+          },
+          "timestamp": {
+            "$id": "#/properties/ap_radios/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the access point radio was seen.",
+            "examples": [
+              1563230173
+            ]
+          },
+          "radio_infos": {
+            "$id": "#/properties/ap_radios/items/properties/radio_infos",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/ap_radios/items/properties/radio_infos/items",
+              "type": "object",
+              "required": [
+                "radio_number",
+                "radio_mac",
+                "rf_band",
+                "channel",
+                "bandwidth",
+                "tx_power",
+                "status"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "radio_number": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/radio_number",
+                  "type": "integer",
+                  "description": "The radio number.",
+                  "default": 0,
+                  "examples": [
+                    1
+                  ]
+                },
+                "radio_mac": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/radio_mac",
+                  "$ref": "definitions.json#/mac_address",
+                  "description": "The MAC address of the radio."
+                },
+                "rf_band": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/rf_band",
+                  "$ref": "definitions.json#/rf_band",
+                  "description": "The RF band of the radio."
+                },
+                "channel": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/channel",
+                  "type": "integer",
+                  "description": "The radio channel.",
+                  "default": 0,
+                  "examples": [
+                    108
+                  ]
+                },
+                "bandwidth": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/bandwidth",
+                  "type": "integer",
+                  "description": "The radio bandwidth.",
+                  "default": 0,
+                  "examples": [
+                    20
+                  ]
+                },
+                "tx_power": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/tx_power",
+                  "type": "integer",
+                  "description": "The radio transmit power in dBm.",
+                  "default": 0,
+                  "examples": [
+                    8
+                  ]
+                },
+                "status": {
+                  "$id": "#/properties/ap_radios/items/properties/radio_infos/items/properties/status",
+                  "type": "string",
+                  "description": "The radio status.",
+                  "default": "",
+                  "examples": [
+                    "up"
+                  ],
+                  "pattern": "up|down"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "device_assoc_infos":[
+  	{
+  	  "mac":"4083ded0fe23",
+      "timestamp": 1563230173,
+  	  "vendor":"MIST",
+  	  "rf_band":"5",
+  	  "model":"",
+  	  "os":"Lollipop",
+  	  "manufacture":"Zebra Technologies Inc",
+  	  "ap_mac":"5c5b35aeb531",
+  	  "wlan":"c9f5bcc9-cf8c-434e-b8de-148420633b71",
+  	  "ssid":"311MGKnbBfME",
+  	  "status":"disassociated",
+  	  "next_ap":"5c5b35aeb47d",
+  	  "location_id":"60965e04-4ce6-47e7-8902-f8d88c3e482a"
+  	}
+  ]
+}

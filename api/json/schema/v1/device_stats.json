@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/device_stats.json",
+  "type": "object",
+  "title": "The Device Stats Schema",
+  "required": [
+    "device_stats"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "device_stats": {
+      "$id": "#/properties/device_stats",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/device_stats/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "timestamp",
+          "tx_bytes",
+          "rx_bytes",
+          "tx_packets",
+          "rx_packets",
+          "tx_retries",
+          "rx_retries",
+          "snr_db",
+          "noise_floor",
+          "rssi",
+          "tx_rate"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/device_stats/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the device."
+          },
+          "timestamp": {
+            "$id": "#/properties/device_stats/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the device status was collected.",
+            "examples": [
+              1563230173
+            ]
+          },
+          "tx_bytes": {
+            "$id": "#/properties/device_stats/items/properties/tx_bytes",
+            "type": "integer",
+            "description": "The transmit byte count of the device.",
+            "default": 0,
+            "examples": [
+              740989
+            ]
+          },
+          "rx_bytes": {
+            "$id": "#/properties/device_stats/items/properties/rx_bytes",
+            "type": "integer",
+            "description": "The receive byte count of the device.",
+            "default": 0,
+            "examples": [
+              1611240
+            ]
+          },
+          "tx_packets": {
+            "$id": "#/properties/device_stats/items/properties/tx_packets",
+            "type": "integer",
+            "description": "The transmite packet count of the device.",
+            "default": 0,
+            "examples": [
+              2452
+            ]
+          },
+          "rx_packets": {
+            "$id": "#/properties/device_stats/items/properties/rx_packets",
+            "type": "integer",
+            "description": "The receive packet count of the device.",
+            "default": 0,
+            "examples": [
+              4416
+            ]
+          },
+          "tx_retries": {
+            "$id": "#/properties/device_stats/items/properties/tx_retries",
+            "type": "integer",
+            "description": "The transmit retry count of the device.",
+            "default": 0,
+            "examples": [
+              299
+            ]
+          },
+          "rx_retries": {
+            "$id": "#/properties/device_stats/items/properties/rx_retries",
+            "type": "integer",
+            "description": "The receive retry count of the device.",
+            "default": 0,
+            "examples": [
+              607
+            ]
+          },
+          "snr_db": {
+            "$id": "#/properties/device_stats/items/properties/snr_db",
+            "type": "integer",
+            "description": "The SnR in dB of the device.",
+            "default": 0,
+            "examples": [
+              34
+            ]
+          },
+          "noise_floor": {
+            "$id": "#/properties/device_stats/items/properties/noise_floor",
+            "type": "integer",
+            "description": "The noise floor of the device.",
+            "default": 0,
+            "examples": [
+              -96
+            ]
+          },
+          "rssi": {
+            "$id": "#/properties/device_stats/items/properties/rssi",
+            "type": "integer",
+            "description": "The RSSI of the device.",
+            "default": 0,
+            "examples": [
+              -58
+            ]
+          },
+          "tx_rate": {
+            "$id": "#/properties/device_stats/items/properties/tx_rate",
+            "type": "number",
+            "description": "The transmit rate of the device in Mbps.",
+            "default": 0.0,
+            "examples": [
+              173.3
+            ]
+          }
+        }
+      }
+    }
+  }
+}

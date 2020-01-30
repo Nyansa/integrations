@@ -1,0 +1,24 @@
+{
+  "ap_infos": [
+    {
+      "mac": "08ECF5A46B60",
+      "ip": "10.248.194.45",
+      "name": "Library-AP1",
+      "ap_group": "Main Campus",
+      "vendor": "Cisco",
+      "model": "AP-AIR-AP3802I-B-K9",
+      "status": "up",
+      "location_id": "ab452de-5d6-a8as-5489cff8c2"
+    },
+    {
+      "mac": "D8C7C8CB3992",
+      "ip": "192.168.3.56",
+      "name": "Lobby-AP1",
+      "ap_group": "Remote Campus",
+      "vendor": "Aruba",
+      "model": "AP-135",
+      "status": "up",
+      "location_id": "ab452de-5d6-a8as-5489cff8c2"
+    }
+  ]
+}

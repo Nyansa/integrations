@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/device_event.json",
+  "type": "object",
+  "title": "The Device Event Schema",
+  "required": [
+    "device_event_infos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "device_event_infos": {
+      "$id": "#/properties/device_event_infos",
+      "type": "array",
+      "title": "The Device Event Schema",
+      "items": {
+        "$id": "#/properties/device_event_infos/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "timestamp",
+          "model",
+          "os",
+          "manufacture",
+          "vendor",
+          "wlan",
+          "ap_mac",
+          "rf_band",
+          "ssid",
+          "next_ap",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/device_event_infos/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The device MAC address."
+          },
+          "timestamp": {
+            "$id": "#/properties/device_event_infos/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the device event was seen.",
+            "examples": [
+              1563230173
+            ]
+          },
+          "vendor": {
+            "$id": "#/properties/device_event_infos/items/properties/vendor",
+            "type": "string",
+            "description": "The name of the device vendor.",
+            "default": "",
+            "examples": [
+              "Cisco"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "rf_band": {
+            "$id": "#/properties/device_event_infos/items/properties/rf_band",
+            "$ref": "definitions.json#/rf_band",
+            "description": "The device RF band."
+          },
+          "model": {
+            "$id": "#/properties/device_event_infos/items/properties/model",
+            "type": "string",
+            "description": "The device model.",
+            "default": "",
+            "examples": [
+              "iPhone 8"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "os": {
+            "$id": "#/properties/device_event_infos/items/properties/os",
+            "type": "string",
+            "description": "The device operating system.",
+            "default": "",
+            "examples": [
+              "iOS (v 10)"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "manufacture": {
+            "$id": "#/properties/device_event_infos/items/properties/manufacture",
+            "type": "string",
+            "description": "The device manufacture.",
+            "default": "",
+            "examples": [
+              "Apple"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "ap_mac": {
+            "$id": "#/properties/device_event_infos/items/properties/ap_mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point the client roamed or disconnected from."
+          },
+          "wlan": {
+            "$id": "#/properties/device_event_infos/items/properties/wlan",
+            "type": "string",
+            "description": "The WLAN ID.",
+            "default": "",
+            "examples": [
+              "c9f5bcc9-cf8c-434e-b8de-148420600b71"
+            ]
+          },
+          "ssid": {
+            "$id": "#/properties/device_event_infos/items/properties/ssid",
+            "type": "string",
+            "description": "The SSID used by the device.",
+            "default": "",
+            "examples": [
+              "eduroam"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "status": {
+            "$id": "#/properties/device_event_infos/items/properties/status",
+            "type": "string",
+            "description": "The status of the device.",
+            "default": "",
+            "examples": [
+              "associated"
+            ],
+            "pattern": "associated|disassociated|roam"
+          },
+          "next_ap": {
+            "$id": "#/properties/device_event_infos/items/properties/next_ap",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point the device is joining."
+          },
+          "location_id": {
+            "$id": "#/properties/device_event_infos/items/properties/location",
+            "type": "string",
+            "description": "The vendor location ID of the device.",
+            "default": "",
+            "examples": [
+              "ab452de-5d6-a8as-5489cff8c2"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

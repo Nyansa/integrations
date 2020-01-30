@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/location.json",
+  "type": "object",
+  "title": "The Location Schema",
+  "required": [
+    "locations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "locations": {
+      "$id": "#/properties/locations",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/locations/items",
+        "type": "object",
+        "required": [
+          "name",
+          "location_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "$id": "#/properties/locations/items/properties/name",
+            "type": "string",
+            "description": "The name of the location.",
+            "default": "",
+            "examples": [
+              "Dining Hall"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "location_id": {
+            "$id": "#/properties/locations/items/properties/location_id",
+            "type": "string",
+            "description": "The vendor location ID.",
+            "default": "",
+            "examples": [
+              "ab452de-5d6-a8as-5489cff8c2"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "ap_radios": [
+    {
+      "mac": "5C5B353ECDB4",
+      "timestamp": 1563230173,
+      "radio_infos": [
+        {
+          "radio_number": 1,
+          "radio_mac": "5C5B35360B50",
+          "rf_band": "5",
+          "channel": 108,
+          "bandwidth": 20,
+          "tx_power": 8,
+          "status": "up"
+        },
+        {
+          "radio_number": 2,
+          "radio_mac": "5C5B35360B40",
+          "rf_band": "24",
+          "channel": 1,
+          "bandwidth": 20,
+          "tx_power": 8,
+          "status": "up"
+        }
+      ]
+    },
+    {
+      "mac": "04BD88C16ABE",
+      "timestamp": 1563230173,
+      "radio_infos": [
+        {
+          "radio_number": 1,
+          "radio_mac": "04BD8896ABF0",
+          "rf_band": "5",
+          "channel": 40,
+          "bandwidth": 20,
+          "tx_power": 15,
+          "status": "up"
+        },
+        {
+          "radio_number": 2,
+          "radio_mac": "04BD8896ABE0",
+          "rf_band": "24",
+          "channel": 1,
+          "bandwidth": 20,
+          "tx_power": 8,
+          "status": "up"
+        }
+      ]
+    }
+  ]
+}

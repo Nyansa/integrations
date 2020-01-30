@@ -1,0 +1,42 @@
+{
+  "ap_rogues": [
+    {
+      "mac": "08ECF5A46B60",
+      "rogues": [
+        {
+          "rf_band": "5",
+          "rogue_bssid": "94B40FCB6510",
+          "rogue_essid": "roku",
+          "snr_db": 19,
+          "rssi": -68.7
+        },
+        {
+          "rf_band": "5",
+          "rogue_bssid": "005810240434",
+          "rogue_essid": "sling",
+          "snr_db": 63,
+          "rssi": -68.8
+        },
+        {
+          "rf_band": "24",
+          "rogue_bssid": "04BD88C16C60",
+          "rogue_essid": "boost",
+          "snr_db": 11,
+          "rssi": -68.9
+        }
+      ]
+    },
+    {
+      "mac": "D8C7C8CB358A",
+      "rogues": [
+        {
+          "rf_band": "24",
+          "rogue_bssid": "F8D02779336F",
+          "rogue_essid": "tower",
+          "snr_db": 40,
+          "rssi": -69.1
+        }
+      ]
+    }
+  ]
+}

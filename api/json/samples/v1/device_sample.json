@@ -1,0 +1,36 @@
+{
+  "device_infos": [
+    {
+      "mac": "90E17BF1965E",
+      "ip": "10.64.139.16",
+      "hostname": "ricks-iphone",
+      "username": "rick@cartoon.net",
+      "channel": 1,
+      "vendor": "Apple",
+      "model": "iPhone 8",
+      "os": "iOS (v 10)",
+      "ap_mac": "0C8BFDE8BD63",
+      "ssid": "eduroam",
+      "rf_protocol": "n",
+      "vlan": 100,
+      "wireless": "true",
+      "location_id": "39b67e40-adb3-4aae514639ee"
+    },
+    {
+      "mac": "0C8BFDE8BD63",
+      "ip": "10.64.139.16",
+      "hostname": "mortys-pc",
+      "username": "morty@cartoon.net",
+      "channel": 153,
+      "vendor": "Dell",
+      "model": "Inspiron",
+      "os": "Windows (v 10)",
+      "ap_mac": "0C8BFDE8BD63",
+      "rf_protocol": "n",
+      "ssid": "guest",
+      "vlan": 880,
+      "wireless": "true",
+      "location_id": "5875f42b-bc52-49fd60870742"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "ap_radio_stats": [
+    {
+      "mac": "5C5B353ECDB4",
+      "timestamp": 1563230173,
+      "radio_stats": [
+        {
+          "rf_band": "5",
+          "tx_bytes": 3018718561,
+          "rx_bytes": 1105080881,
+          "tx_packets": 5060882,
+          "rx_packets": 3401741,
+          "noise_floor": -92,
+          "channel_utilization": 2
+        },
+        {
+          "rf_band": "24",
+          "tx_bytes": 1769965900,
+          "rx_bytes": 341435702,
+          "tx_packets": 1572532,
+          "rx_packets": 1307496,
+          "noise_floor": -86,
+          "channel_utilization": 2
+        }
+      ]
+    },
+    {
+      "mac": "04BD88C16ABE",
+      "timestamp": 1563230173,
+      "radio_stats": [
+        {
+          "rf_band": "5",
+          "tx_bytes": 585848384,
+          "rx_bytes": 453992939,
+          "tx_packets": 459392,
+          "rx_packets": 896964,
+          "noise_floor": -96,
+          "channel_utilization": 20
+        },
+        {
+          "rf_band": "24",
+          "tx_bytes": 2939586432,
+          "rx_bytes": 75943942,
+          "tx_packets": 559392,
+          "rx_packets": 6493943,
+          "noise_floor": -85,
+          "channel_utilization": 12
+        }
+      ]
+    }
+  ]
+}

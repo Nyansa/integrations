@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/access_point_event.json",
+  "type": "object",
+  "title": "The Access Point Event Schema",
+  "required": [
+    "ap_event_infos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ap_event_infos": {
+      "$id": "#/properties/ap_event_infos",
+      "type": "array",
+      "title": "The Aps Event Schema",
+      "items": {
+        "$id": "#/properties/ap_event_infos/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "timestamp",
+          "vendor",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/ap_event_infos/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point."
+          },
+          "timestamp": {
+            "$id": "#/properties/ap_event_infos/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the access point event was seen.",
+            "examples": [
+              1563230173
+            ]
+          },
+          "name": {
+            "$id": "#/properties/ap_event_infos/items/properties/name",
+            "type": "string",
+            "default": "",
+            "description": "The name of the access point.",
+            "examples": [
+              "Library-AP1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "vendor": {
+            "$id": "#/properties/ap_event_infos/items/properties/vendor",
+            "type": "string",
+            "description": "The name of the access point vendor.",
+            "default": "",
+            "examples": [
+              "Cisco"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "status": {
+            "$id": "#/properties/ap_event_infos/items/properties/status",
+            "type": "string",
+            "description": "The status of the access point.",
+            "default": "",
+            "examples": [
+              "associated"
+            ],
+            "pattern": "associated|disassociated|reboot"
+          },
+          "location_id": {
+            "$id": "#/properties/ap_event_infos/items/properties/location",
+            "type": "string",
+            "description": "The vendor location ID of the access point.",
+            "default": "",
+            "examples": [
+              "ab452de-5d6-a8as-5489cff8c2"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

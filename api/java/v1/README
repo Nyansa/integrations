@@ -1,0 +1,2 @@
+To generate generate the Java source files from the JSON schema, compile and create a JAR file, run this Maven command:
+mvn clean generate-sources install

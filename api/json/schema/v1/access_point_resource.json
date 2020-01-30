@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/access_point_resource.json",
+  "type": "object",
+  "title": "The Access Point Resource Schema",
+  "required": [
+    "ap_resources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ap_resources": {
+      "$id": "#/properties/aps",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/aps/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "timestamp",
+          "mem_total_kb",
+          "mem_used_kb"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/aps/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point."
+          },
+          "timestamp": {
+            "$id": "#/properties/aps/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the access point resources was collected.",
+            "examples": [
+              1563230173
+            ]
+          },
+          "mem_total_kb": {
+            "$id": "#/properties/aps/items/properties/mem_total_kb",
+            "type": "integer",
+            "description": "The total memory in kilobytes.",
+            "default": 0,
+            "examples": [
+              514916
+            ]
+          },
+          "mem_used_kb": {
+            "$id": "#/properties/aps/items/properties/mem_used_kb",
+            "type": "integer",
+            "description": "The memory used in kilobytes.",
+            "default": 0,
+            "examples": [
+              106240
+            ]
+          },
+          "cpu_util_pct": {
+            "$id": "#/properties/aps/items/properties/cpu_util_pct",
+            "type": "integer",
+            "description": "The CPU utilization percentage.",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 100,
+            "examples": [
+              20
+            ]
+          }
+        }
+      }
+    }
+  }
+}

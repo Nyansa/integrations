@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/access_point_bssid_essid.json",
+  "type": "object",
+  "title": "The Access Point BSSID-ESSID Schema",
+  "required": [
+    "ap_bssid_essids"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ap_bssid_essids": {
+      "$id": "#/properties/ap_bssid_essids",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/ap_bssid_essids/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "radio_bssid_essids"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/ap_bssid_essids/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point."
+          },
+          "radio_bssid_essids": {
+            "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids/items",
+              "type": "object",
+              "required": [
+                "rf_band",
+                "bssid_essid"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "rf_band": {
+                  "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids/items/properties/rf_band",
+                  "$ref": "definitions.json#/rf_band",
+                  "description": "The RF band of the radio."
+                },
+                "bssid_essid": {
+                  "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids/items/properties/bssid_essid",
+                  "type": "array",
+                  "items": {
+                    "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids/items/properties/bssid_essid/items",
+                    "type": "object",
+                    "required": [
+                      "bssid",
+                      "essid"
+                    ],
+                    "properties": {
+                      "bssid": {
+                        "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids/items/properties/bssid_essid/items/properties/bssid",
+                        "$ref": "definitions.json#/mac_address",
+                        "description": "The BSSID."
+                      },
+                      "essid": {
+                        "$id": "#/properties/ap_bssid_essids/items/properties/radio_bssid_essids/items/properties/bssid_essid/items/properties/essid",
+                        "type": "string",
+                        "description": "The ESSID.",
+                        "default": "",
+                        "examples": [
+                          "corp"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

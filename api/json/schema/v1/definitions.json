@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/definitions.json",
+  "type": "object",
+  "title": "The Definitions Schema For Custom Types",
+  "mac_address": {
+    "type": "string",
+    "description": "The MAC address.",
+    "examples": [
+      "08ECF5A46B60"
+    ],
+    "pattern": "^([0-9A-Fa-f]{2}){5}([0-9A-Fa-f]{2})$"
+  },
+  "ipv4_address": {
+    "type": "string",
+    "description": "The IPv4 address of the access point.",
+    "examples": [
+      "10.248.194.45"
+    ],
+    "pattern": "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+  },
+  "rf_band": {
+    "type": "string",
+    "description": "The RF band of the radio.",
+    "examples": [
+      "5"
+    ],
+    "pattern": "5|24"
+  }
+}

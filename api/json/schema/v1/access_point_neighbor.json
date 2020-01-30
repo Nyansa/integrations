@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/access_point_neighbor.json",
+  "type": "object",
+  "title": "The Access Point Neighbor Schema",
+  "required": [
+    "ap_neighbors"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ap_neighbors": {
+      "$id": "#/properties/ap_neighbors",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/ap_neighbors/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "neighbors"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/ap_neighbors/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point."
+          },
+          "neighbors": {
+            "$id": "#/properties/ap_neighbors/items/properties/neighbors",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/ap_neighbors/items/properties/neighbors/items",
+              "type": "object",
+              "required": [
+                "neighbor_mac",
+                "rf_band",
+                "snr_db",
+                "channel",
+                "bandwidth"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "neighbor_mac": {
+                  "$id": "#/properties/ap_neighbors/items/properties/neighbors/items/properties/neighbor_mac",
+                  "$ref": "definitions.json#/mac_address",
+                  "description": "The MAC address of the neighbor access point."
+                },
+                "rf_band": {
+                  "$id": "#/properties/ap_neighbors/items/properties/neighbors/items/properties/rf_band",
+                  "$ref": "definitions.json#/rf_band",
+                  "description": "The RF band of the neighbor radio."
+                },
+                "snr_db": {
+                  "$id": "#/properties/ap_neighbors/items/properties/neighbors/items/properties/snr_db",
+                  "type": "integer",
+                  "description": "The SnR of the neighbor radio in dB.",
+                  "default": 0,
+                  "examples": [
+                    35
+                  ]
+                },
+                "channel": {
+                  "$id": "#/properties/ap_neighbors/items/properties/neighbors/items/properties/channel",
+                  "type": "integer",
+                  "description": "The channel of the neighbor radio.",
+                  "default": 0,
+                  "examples": [
+                    36
+                  ]
+                },
+                "bandwidth": {
+                  "$id": "#/properties/ap_neighbors/items/properties/neighbors/items/properties/bandwidth",
+                  "type": "integer",
+                  "description": "The bandwidth of the neighbor radio.",
+                  "default": 0,
+                  "examples": [
+                    20
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "ap_neighbors": [
+    {
+      "mac": "08ECF5A46B60",
+      "neighbors": [
+        {
+          "neighbor_mac": "D8C7C8CB60AE",
+          "rf_band": "5",
+          "snr_db": 35,
+          "channel": 36,
+          "bandwidth": 20
+        },
+        {
+          "neighbor_mac": "D8C7C8CB4DEC",
+          "rf_band": "5",
+          "snr_db": 23,
+          "channel": 40,
+          "bandwidth": 20
+        },
+        {
+          "neighbor_mac": "24DEC6C920BE",
+          "rf_band": "24",
+          "snr_db": 19,
+          "channel": 6,
+          "bandwidth": 20
+        }
+      ]
+    },
+    {
+      "mac": "B45D50C63062",
+      "neighbors": [
+        {
+          "neighbor_mac": "B45D50C530E6",
+          "rf_band": "5",
+          "snr_db": 9,
+          "channel": 165,
+          "bandwidth": 20
+        },
+        {
+          "neighbor_mac": "B45D50C6300E",
+          "rf_band": "5",
+          "snr_db": 17,
+          "channel": 40,
+          "bandwidth": 20
+        },
+        {
+          "neighbor_mac": "B45D50C63104",
+          "rf_band": "24",
+          "snr_db": 17,
+          "channel": 1,
+          "bandwidth": 20
+        }
+      ]
+    }
+  ]
+}

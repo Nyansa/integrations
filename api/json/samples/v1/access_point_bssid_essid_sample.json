@@ -1,0 +1,82 @@
+{
+  "ap_bssid_essids": [
+    {
+      "mac": "04BD88C16ABE",
+      "radio_bssid_essids": [
+        {
+          "rf_band": "5",
+          "bssid_essid": [
+            {
+              "bssid": "04BD8896ABF1",
+              "essid": "corp"
+            },
+            {
+              "bssid": "04BD8896ABF2",
+              "essid": "guest"
+            },
+            {
+              "bssid": "04BD8896ABF3",
+              "essid": "eduroam"
+            }
+          ]
+        },
+        {
+          "rf_band": "24",
+          "bssid_essid": [
+            {
+              "bssid": "04BD8896ABE1",
+              "essid": "corp"
+            },
+            {
+              "bssid": "04BD8896ABE2",
+              "essid": "guest"
+            },
+            {
+              "bssid": "04BD8896ABE3",
+              "essid": "eduroam"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mac": "B45D50C63062",
+      "radio_bssid_essids": [
+        {
+          "rf_band": "5",
+          "bssid_essid": [
+            {
+              "bssid": "B45D50E30630",
+              "essid": "corp"
+            },
+            {
+              "bssid": "B45D50E30631",
+              "essid": "guest"
+            },
+            {
+              "bssid": "B45D50E30632",
+              "essid": "eduroam"
+            }
+          ]
+        },
+        {
+          "rf_band": "24",
+          "bssid_essid": [
+            {
+              "bssid": "B45D50E30620",
+              "essid": "corp"
+            },
+            {
+              "bssid": "B45D50E30621",
+              "essid": "guest"
+            },
+            {
+              "bssid": "B45D50E30622",
+              "essid": "eduroam"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

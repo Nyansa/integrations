@@ -1,0 +1,156 @@
+{ 
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/device.json",
+  "type": "object",
+  "title": "The Device Schema",
+  "required": [
+    "device_infos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "device_infos": {
+      "$id": "#/properties/device_infos",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/device_infos/items",
+        "type": "object",
+        "required": [
+          "mac",
+          "username",
+          "channel",
+          "vendor",
+          "ap_mac",
+          "rf_protocol",
+          "vlan",
+          "wireless"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mac": {
+            "$id": "#/properties/device_infos/items/properties/mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the device."
+          },
+          "ip": {
+            "$id": "#/properties/device_infos/items/properties/ip",
+            "$ref": "definitions.json#/ipv4_address",
+            "description": "The IPv4 address of the device."
+          },
+          "hostname": {
+            "$id": "#/properties/device_infos/items/properties/hostname",
+            "type": "string",
+            "description": "The hostname of the device.",
+            "default": "",
+            "examples": [
+              "ricks-iphone"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "username": {
+            "$id": "#/properties/device_infos/items/properties/username",
+            "type": "string",
+            "title": "The username.",
+            "default": "",
+            "examples": [
+              "rick@cartoon.net"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "channel": {
+            "$id": "#/properties/device_infos/items/properties/channel",
+            "type": "integer",
+            "description": "The radio channel of the device.",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "vendor": {
+            "$id": "#/properties/device_infos/items/properties/vendor",
+            "type": "string",
+            "description": "The device vendor.",
+            "default": "",
+            "examples": [
+              "Apple"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "model": {
+            "$id": "#/properties/device_infos/items/properties/model",
+            "type": "string",
+            "description": "The device model.",
+            "default": "",
+            "examples": [
+              "iPhone 8"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "os": {
+            "$id": "#/properties/device_infos/items/properties/os",
+            "type": "string",
+            "description": "The device operating system.",
+            "default": "",
+            "examples": [
+              "iOS (v 10)"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "ap_mac": {
+            "$id": "#/properties/device_infos/items/properties/ap_mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point the device is associated with."
+          },
+          "rf_protocol": {
+            "$id": "#/properties/device_infos/items/properties/rf_protocol",
+            "type": "string",
+            "description": "The RF protocol of the device radio.",
+            "default": "",
+            "examples": [
+              "n"
+            ],
+            "pattern": "a|b|g|n|ac"
+          },
+          "ssid": {
+            "$id": "#/properties/device_infos/items/properties/ssid",
+            "type": "string",
+            "description": "The SSID used by the device.",
+            "default": "",
+            "examples": [
+              "eduroam"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "vlan": {
+            "$id": "#/properties/device_infos/items/properties/vlan",
+            "type": "integer",
+            "description": "The VLAN ID.",
+            "default": 0,
+            "examples": [
+              100
+            ]
+          },
+          "wireless": {
+            "$id": "#/properties/device_infos/items/properties/wireless",
+            "type": "string",
+            "description": "The wireless of the device.",
+            "default": "",
+            "examples": [
+              "true"
+            ],
+            "pattern": "true|false"
+          },
+          "location_id": {
+            "$id": "#/properties/device_infos/items/properties/location",
+            "type": "string",
+            "description": "The vendor location ID of the device.",
+            "default": "",
+            "examples": [
+              "ab452de-5d6-a8as-5489cff8c2"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

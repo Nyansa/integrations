@@ -1,0 +1,12 @@
+{
+  "locations": [
+    {
+      "name": "Dining Hall",
+      "location_id": "ab452de-5d6-a8as-5489cff8c2"
+    },
+    {
+      "name": "Residence",
+      "location_id": "584324c-982-352e-489473ba43"
+    }
+  ]
+}
