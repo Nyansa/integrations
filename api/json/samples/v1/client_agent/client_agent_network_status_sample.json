@@ -1,0 +1,66 @@
+{
+  "ca_network_statuses": {
+    "agent_info": {
+      "agent_type": "WPF",
+      "os_version": "Microsoft Windows 10 Pro",
+      "build_version": "19041",
+      "device_model": "ROG STRIX Z370-G GAMING (WI-FI AC)",
+      "device_class": "Desktop",
+      "app_version": "0.7.0.300"
+    },
+    "network_statuses": [
+      {
+        "report_time": 1601646700,
+        "dns": [
+          "1.1.1.1",
+          "2a02:908:2:a::1",
+          "2a02:908:2:b::1",
+          "192.168.0.1"
+        ],
+        "interfaces": [
+          {
+            "dev": "{DFC95BE5-66F7-4388-9F65-5A95F43C5371}",
+            "identifier": "{DFC95BE5-66F7-4388-9F65-5A95F43C5371}:D0C5D3474A89",
+            "type": "IEEE80211",
+            "mtu": 1500,
+            "max_rate": 144400000,
+            "addresses": [
+              "192.168.0.129",
+              "2a02:908:1873:da0:2522:d7aa:a587:3ef5",
+              "2a02:908:1873:da0:7d62:5941:2bf8:68fa",
+              "fe80::2522:d7aa:a587:3ef5%32"
+            ],
+            "stats": {
+              "in_bytes": 0,
+              "in_err_bytes": 0,
+              "out_bytes": 0,
+              "out_err_bytes": 0
+            },
+            "link": true
+          },
+          {
+            "dev": "{8BD0C549-ACEB-4994-A04A-952DE3625D22}",
+            "identifier": "{8BD0C549-ACEB-4994-A04A-952DE3625D22}:2CFDA1610975",
+            "type": "IEEE80211",
+            "mtu": 1500,
+            "max_rate": 866500000,
+            "addresses": [
+              "169.254.241.74",
+              "192.168.0.178",
+              "2a02:908:1873:da0:6d10:fdf5:5bf0:f14a",
+              "2a02:908:1873:da0:cc6a:bbfd:3a9f:4544",
+              "fe80::6d10:fdf5:5bf0:f14a%17"
+            ],
+            "stats": {
+              "in_bytes": 0,
+              "in_err_bytes": 0,
+              "out_bytes": 0,
+              "out_err_bytes": 0
+            },
+            "link": false
+          }
+        ]
+      }
+    ]
+  }
+}

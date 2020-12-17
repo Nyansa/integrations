@@ -1,0 +1,517 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nyansa.com/schemas/v1/client_agent/client_agent_wifi_status.json",
+  "type": "object",
+  "title": "Client Agent Wifi-Status Schema",
+  "description": "Schema for Wifi-Status reports",
+  "required": [
+    "ca_wifi_statuses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ca_wifi_statuses": {
+      "$id": "#/properties/ca_wifi_statuses",
+      "type": "object",
+      "title": "Client agent wifi status reports with agent info",
+      "required": [
+        "agent_info",
+        "wifi_statuses"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "agent_info": {
+          "$id": "#/properties/ca_wifi_statuses/properties/agent_info",
+          "type": "object",
+          "description": "The client agent summary info.",
+          "required": [
+            "agent_type",
+            "os_version",
+            "build_version",
+            "device_model",
+            "app_version",
+            "device_class"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "app_version": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/app_version",
+              "type": "string",
+              "description": "The client agent version.",
+              "default": "",
+              "examples": [
+                "1.2.3"
+              ]
+            },
+            "agent_type": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/agent_type",
+              "type": "string",
+              "description": "The operating system where the client agent is running.",
+              "examples": [
+                "windows"
+              ]
+            },
+            "os_version": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/os_version",
+              "type": "string",
+              "description": "The operating system version where the client agent is running.",
+              "examples": [
+                "Microsoft Windows 10 Pro"
+              ]
+            },
+            "build_version": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/build_version",
+              "type": "string",
+              "description": "The operating system build version where the client agent is running.",
+              "examples": [
+                "18363"
+              ]
+            },
+            "device_model": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/device_model",
+              "type": "string",
+              "description": "The hardware device model where the client agent is running.",
+              "examples": [
+                "System Product Name"
+              ]
+            },
+            "device_class": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/device_class",
+              "type": "string",
+              "description": "The hardware device class where the client agent is running.",
+              "examples": [
+                "Desktop"
+              ]
+            },
+            "system_identifier": {
+              "$id": "#/properties/ca_wifi_statuses/properties/agent_info/properties/system_identifier",
+              "type": "string",
+              "description": "Device identifier composed of NIC ID and MAC",
+              "examples": [
+                "BB958313-7283-41E6-9E9F-6A279A5374CA:f8ffc25cfdea"
+              ]
+            }
+          }
+        },
+        "wifi_statuses": {
+          "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses",
+          "type": "array",
+          "title": "Client agent wifi status reports",
+          "items": {
+            "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items",
+            "type": "object",
+            "required": [
+              "report_time",
+              "connected",
+              "last_scan"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "report_time": {
+                "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/report_time",
+                "type": "integer",
+                "description": "The UNIX epoch timestamp of when the report was generated.",
+                "examples": [
+                  1595634180
+                ]
+              },
+              "system_identifier": {
+                "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/system_identifier",
+                "type": "string",
+                "description": "Adapter ID + MAC address.",
+                "examples": [
+                  "{DFC95BE5-66F7-4388-9F65-5A95F43C5371}:D0C5D3474A89"
+                ]
+              },
+              "last_scan": {
+                "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan",
+                "type": "array",
+                "additionalItems": true,
+                "description": "Scan of wifi APs in range of client that are not connected.",
+                "items": {
+                  "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items",
+                  "type": "object",
+                  "required": [
+                    "beacon",
+                    "channel",
+                    "channel0",
+                    "channel1",
+                    "security",
+                    "phy_modes",
+                    "rssi",
+                    "width",
+                    "noise",
+                    "snr",
+                    "ibss",
+                    "bssid",
+                    "ssid"
+                  ],
+                  "additionalProperties": true,
+                  "properties": {
+                    "bssid": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/bssid",
+                      "type": "string",
+                      "description": "Basic Service Set Identifier: Unique 48-bit label associated with an individual access point",
+                      "examples": [
+                        "90:5c:44:a1:38:bb"
+                      ]
+                    },
+                    "ssid": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/ssid",
+                      "type": "string",
+                      "description": "Service Set Identifier: name advertised by one or more APs",
+                      "examples": [
+                        "WinFi 5 GHz"
+                      ]
+                    },
+                    "security": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/security",
+                      "type": "array",
+                      "description": "Wireless security protocols",
+                      "examples": [
+                        [
+                          "WPA2Personal",
+                          "DynamicWEP"
+                        ]
+                      ]
+                    },
+                    "phy_modes": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/phy_modes",
+                      "type": "array",
+                      "description": "Physical layer modes",
+                      "examples": [
+                        [
+                          "n",
+                          "ac"
+                        ]
+                      ]
+                    },
+                    "beacon": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/beacon",
+                      "type": "integer",
+                      "description": "Beacon Broadcast interval, time lag (in ms) between each of the beacons sent by router/access points.",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "channel": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/channel",
+                      "type": "integer",
+                      "description": "Channel number in use: e.g. of the 11 channels in 2.4 GHz freq band.",
+                      "examples": [
+                        11
+                      ]
+                    },
+                    "channel0": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/channel0",
+                      "type": "integer",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "channel1": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/channel1",
+                      "type": "integer",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "band": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/band",
+                      "type": "integer",
+                      "description": "Band as an int value. 2 for 2.4GHz and 5 for 5GHz spectrum",
+                      "examples": [
+                        2
+                      ]
+                    },
+                    "rssi": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/rssi",
+                      "type": "integer",
+                      "description": "Received Signal Strength Indication: measurement of how well your device can hear a signal from an access point or router. Closer to 0, stronger signal.",
+                      "examples": [
+                        -73
+                      ]
+                    },
+
+                    "width": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/width",
+                      "type": "integer",
+                      "examples": [
+                        1
+                      ]
+                    },
+                    "noise": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/noise",
+                      "type": "integer",
+                      "description": "Signal interference measued in dB.",  
+                      "examples": [
+                        -101
+                      ]
+                    },
+                    "snr": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/snr",
+                      "type": "integer",
+                      "description": "Value that evaluates your signal based on the noise being seen: in dB.",
+                      "examples": [
+                        28
+                      ]
+                    },
+                    "timestamp": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/timestamp",
+                      "type": "integer",
+                      "description": "The UNIX epoch timestamp of scan",
+                      "examples": [
+                        1596651304
+                      ]
+                    },
+                    "is80211mcResponder": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/is80211mcResponder",
+                      "type": "boolean",
+                      "description": "Whether AP supports 802.11mc",
+                      "examples": [
+                        false
+                      ]
+                    },
+                    "isPasspointNetwork": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/isPasspointNetwork",
+                      "type": "boolean",
+                      "description": "Whether AP supports Passpoint network access.",
+                      "examples": [
+                        false
+                      ]
+                    },
+                    "operatorFriendlyName": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/operatorFriendlyName",
+                      "type": "string",
+                      "description": "Operator Friendly Name field for hotspot.",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "venueName": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/venueName",
+                      "type": "string",
+                      "description": "Venue Name field for hotspot.",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "ibss": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/ibss",
+                      "type": "boolean",
+                      "description": "Whether Independent Basic Service Set is active aka Ad-hoc/Peer-to-peer.",
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                }
+              },
+              "connected": {
+                "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected",
+                "type": "array",
+                "additionalItems": true,
+                "description": "Wifi APs that are connected.",
+                "items": {
+                  "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items",
+                  "type": "object",
+                  "required": [
+                    "beacon",
+                    "channel",
+                    "channel0",
+                    "channel1",
+                    "security",
+                    "phy_modes",
+                    "rssi",
+                    "width",
+                    "noise",
+                    "snr",
+                    "ibss",
+                    "bssid",
+                    "ssid",
+                    "tx_rate",
+                    "tx_power"
+                  ],
+                  "additionalProperties": true,
+                  "properties": {
+                    "bssid": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/bssid",
+                      "type": "string",
+                      "description": "Basic Service Set Identifier: Unique 48-bit label associated with an individual access point",
+                      "examples": [
+                        "90:5c:44:a1:38:bb"
+                      ]
+                    },
+                    "ssid": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/ssid",
+                      "type": "string",
+                      "description": "Service Set Identifier: name advertised by one or more APs",
+                      "examples": [
+                        "WinFi 5 GHz"
+                      ]
+                    },
+                    "tx_power": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/tx_power",
+                      "type": "integer",
+                      "description": "Strength of wireless signal transmitted.",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "tx_rate": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/tx_rate",
+                      "type": "integer",
+                      "description": "The wireless transmission rate in mbps.",
+                      "examples": [
+                        866
+                      ]
+                    },
+                    "security": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/security",
+                      "type": "array",
+                      "description": "Wireless security protocols",
+                      "examples": [
+                        [
+                          "WPA2Personal",
+                          "DynamicWEP"
+                        ]
+                      ]
+                    },
+                    "phy_modes": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/phy_modes",
+                      "type": "array",
+                      "description": "Physical layer modes",
+                      "examples": [
+                        [
+                          "n",
+                          "ac"
+                        ]
+                      ]
+                    },
+                    "beacon": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/beacon",
+                      "type": "integer",
+                      "description": "Beacon Broadcast interval, time lag (in ms) between each of the beacons sent by router/access points.",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "channel": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/channel",
+                      "type": "integer",
+                      "description": "Channel number in use: e.g. of the 11 channels in 2.4 GHz freq band.",
+                      "examples": [
+                        11
+                      ]
+                    },
+                    "channel0": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/channel0",
+                      "type": "integer",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "channel1": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/channel1",
+                      "type": "integer",
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "band": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/last_scan/items/properties/band",
+                      "type": "integer",
+                      "description": "Band as an int value. 2 for 2.4GHz and 5 for 5GHz spectrum",
+                      "examples": [
+                        2
+                      ]
+                    },
+                    "rssi": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/rssi",
+                      "type": "integer",
+                      "description": "Received Signal Strength Indication: measurement of how well your device can hear a signal from an access point or router. Closer to 0, stronger signal.",
+                      "examples": [
+                        -73
+                      ]
+                    },
+
+                    "width": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/width",
+                      "type": "integer",
+                      "examples": [
+                        1
+                      ]
+                    },
+                    "noise": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/noise",
+                      "type": "integer",
+                      "description": "Signal interference measued in dB.",  
+                      "examples": [
+                        -101
+                      ]
+                    },
+                    "snr": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/snr",
+                      "type": "integer",
+                      "description": "Value that evaluates your signal based on the noise being seen: in dB.",
+                      "examples": [
+                        28
+                      ]
+                    },
+                    "timestamp": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/timestamp",
+                      "type": "integer",
+                      "description": "The UNIX epoch timestamp of scan",
+                      "examples": [
+                        1596651304
+                      ]
+                    },
+                    "is80211mcResponder": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/is80211mcResponder",
+                      "type": "boolean",
+                      "description": "Whether AP supports 802.11mc",
+                      "examples": [
+                        false
+                      ]
+                    },
+                    "isPasspointNetwork": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/isPasspointNetwork",
+                      "type": "boolean",
+                      "description": "Whether AP supports Passpoint network access.",
+                      "examples": [
+                        false
+                      ]
+                    },
+                    "operatorFriendlyName": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/operatorFriendlyName",
+                      "type": "string",
+                      "description": "Operator Friendly Name field for hotspot.",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "venueName": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/venueName",
+                      "type": "string",
+                      "description": "Venue Name field for hotspot.",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "ibss": {
+                      "$id": "#/properties/ca_wifi_statuses/properties/wifi_statuses/items/properties/connected/items/properties/ibss",
+                      "type": "boolean",
+                      "description": "Whether Independent Basic Service Set is active aka Ad-hoc/Peer-to-peer.",
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

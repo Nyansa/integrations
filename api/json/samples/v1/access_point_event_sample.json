@@ -1,0 +1,12 @@
+{
+  "ap_event_infos":[
+	{
+	  "mac":"5C5B35AF3015",
+	  "name":"APUS-6616-223",
+	  "vendor":"MIST",
+	  "status":"associated",
+	  "location_id":"8cdaf3f4-9c5a-4005-97c4-2477dc239998",
+	  "timestamp": 1563230173
+	}
+  ]
+}

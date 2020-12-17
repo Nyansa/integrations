@@ -1,0 +1,102 @@
+{
+  "ca_pings": {
+    "agent_info": {
+      "agent_type": "WPF",
+      "os_version": "Microsoft Windows 10 Pro",
+      "build_version": "19041",
+      "device_model": "ROG STRIX Z370-G GAMING (WI-FI AC)",
+      "device_class": "Desktop",
+      "app_version": "0.6.0.253"
+    },
+    "pings": [
+      {
+        "report_time": 1592982490,
+        "hostname": "192.168.0.1",
+        "address": "192.168.0.1",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "www.live.com",
+        "address": "204.79.197.212",
+        "is_vpn": false,
+                "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "www.google.com",
+        "address": "172.217.21.228",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "8.8.8.8",
+        "address": "8.8.8.8",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "www.vmware.com",
+        "address": "2.19.104.56",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "www.nyansa.com",
+        "address": "104.196.147.253",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "1.1.1.1",
+        "address": "1.1.1.1",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      },
+      {
+        "report_time": 1592982490,
+        "hostname": "www.vmware.com",
+        "address": "104.108.178.98",
+        "is_vpn": false,
+        "rtt_min" : 10,
+        "rtt_max" : 50,
+        "rtt_avg" : 11,
+        "tx_samples" : 12,
+        "rx_samples" : 10
+      }
+    ]
+  }
+}

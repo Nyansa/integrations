@@ -1,0 +1,204 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nyansa.com/schemas/v1/client_agent/client_agent_ping.json",
+  "type": "object",
+  "title": "The client agent ping schema",
+  "required": [
+    "ca_pings"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ca_pings": {
+      "$id": "#/properties/ca_pings",
+      "type": "object",
+      "title": "The client agent pings schema",
+      "required": [
+        "agent_info",
+        "pings"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "agent_info": {
+          "$id": "#/properties/ca_pings/properties/agent_info",
+          "type": "object",
+          "description": "The client agent version info.",
+          "required": [
+            "agent_type",
+            "os_version",
+            "build_version",
+            "device_model",
+            "device_class",
+            "app_version"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "agent_type": {
+              "$id": "#/properties/agent_info/properties/agent_type",
+              "type": "string",
+              "description": "The operating system where the client agent is running.",
+              "default": "",
+              "examples": [
+                "macOS"
+              ]
+            },
+            "os_version": {
+              "$id": "#/properties/agent_info/properties/os_version",
+              "type": "string",
+              "description": "The operating system version where the client agent is running.",
+              "default": "",
+              "examples": [
+                "10.15.5"
+              ]
+            },
+            "build_version": {
+              "$id": "#/properties/agent_info/properties/build_version",
+              "type": "string",
+              "description": "The operating system build version where the client agent is running.",
+              "default": "",
+              "examples": [
+                "19F96"
+              ]
+            },
+            "device_model": {
+              "$id": "#/properties/agent_info/properties/device_model",
+              "type": "string",
+              "description": "The hardware device model where the client agent is running.",
+              "default": "",
+              "examples": [
+                "iMac19,1"
+              ]
+            },
+            "device_class": {
+              "$id": "#/properties/agent_info/properties/device_class",
+              "type": "string",
+              "description": "The hardware device class where the client agent is running.",
+              "default": "",
+              "examples": [
+                "Desktop"
+              ]
+            },
+            "app_version": {
+              "$id": "#/properties/agent_info/properties/app_version",
+              "type": "string",
+              "description": "The client agent version.",
+              "examples": [
+                "1.2.3 132.11"
+              ]
+            },
+            "system_identifier": {
+              "$id": "#/properties/agent_info/properties/system_identifier",
+              "type": "string",
+              "description": "Device identifier composed of NIC ID and MAC",
+              "examples": [
+                "BB958313-7283-41E6-9E9F-6A279A5374CA:f8ffc25cfdea"
+              ]
+            }
+          }
+        },
+        "pings": {
+          "$id": "#/properties/ca_pings/properties/pings",
+          "type": "array",
+          "additionalItems": false,
+          "items": {
+            "$id": "#/properties/ca_pings/properties/pings/items",
+            "type": "object",
+            "required": [
+              "report_time",
+              "hostname",
+              "address",
+              "is_vpn",
+              "rtt_min",
+              "rtt_max",
+              "rtt_avg",
+              "tx_samples",
+              "rx_samples"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "report_time": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/report_time",
+                "type": "integer",
+                "description": "The UNIX epoch timestamp of when the report was generated.",
+                "examples": [
+                  1592982490
+                ]
+              },
+              "hostname": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/hostname",
+                "type": "string",
+                "description": "The ping destination hostname.",
+                "examples": [
+                  "hostname 1"
+                ]
+              },
+              "address": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/address",
+                "type": "string",
+                "description": "The ping destination IP address.",
+                "examples": [
+                  "1.1.1.1"
+                ]
+              },
+              "is_vpn": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/is_vpn",
+                "type": "boolean",
+                "description": "Whether this is a vpn endpoint.",
+                "examples": [
+                  true
+                ]
+              },
+              "is_gateway": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/is_gateway",
+                "type": "boolean",
+                "description": "Whether this is a default gateway.",
+                "examples": [
+                  true
+                ]
+              },
+              "rtt_min": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/rtt_min",
+                "type": "number",
+                "description": "Minimum round trip time in ms.",
+                "examples": [
+                  1.8
+                ]
+              },
+              "rtt_max": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/rtt_max",
+                "type": "number",
+                "description": "Maximum round trip time in ms.",
+                "examples": [
+                  127.5
+                ]
+              },
+              "rtt_avg": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/rtt_avg",
+                "type": "number",
+                "description": "Average round trip time in ms of pings.",
+                "examples": [
+                  12.4
+                ]
+              },
+              "tx_samples": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/tx_samples",
+                "type": "integer",
+                "description": "Total number of ping samples.",
+                "examples": [
+                  20
+                ]
+              },
+              "rx_samples": {
+                "$id": "#/properties/ca_pings/properties/pings/items/properties/rx_samples",
+                "type": "integer",
+                "description": "Successful number of ping samples.",
+                "examples": [
+                  18
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

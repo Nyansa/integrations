@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nyansa.com/schemas/v1/client_agent/client_agent_web_fetch.json",
+  "type": "object",
+  "title": "Client Agent Web-fetch Schema",
+  "description": "Schema for HTTP/HTTPS operations",
+  "required": [
+    "ca_web_fetches"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ca_web_fetches": {
+      "$id": "#/properties/ca_web_fetches",
+      "type": "object",
+      "title": "Client agent web fetch operations with agent info",
+      "required": [
+        "agent_info",
+        "web_fetches"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "agent_info": {
+          "$id": "#/properties/ca_web_fetches/properties/agent_info",
+          "type": "object",
+          "description": "The client agent summary info.",
+          "required": [
+            "agent_type",
+            "os_version",
+            "build_version",
+            "device_model",
+            "device_class",
+            "app_version"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "app_version": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/app_version",
+              "type": "string",
+              "description": "The client agent version.",
+              "default": "",
+              "examples": [
+                "1.2.3 132.11"
+              ]
+            },
+            "agent_type": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/agent_type",
+              "type": "string",
+              "description": "The operating system where the client agent is running.",
+              "default": "",
+              "examples": [
+                "macOS"
+              ]
+            },
+            "os_version": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/os_version",
+              "type": "string",
+              "description": "The operating system version where the client agent is running.",
+              "default": "",
+              "examples": [
+                "10.15.5"
+              ]
+            },
+            "build_version": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/build_version",
+              "type": "string",
+              "description": "The operating system build version where the client agent is running.",
+              "default": "",
+              "examples": [
+                "19F96"
+              ]
+            },
+            "device_model": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/device_model",
+              "type": "string",
+              "description": "The hardware device model where the client agent is running.",
+              "default": "",
+              "examples": [
+                "iMac19,1"
+              ]
+            },
+            "device_class": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/device_class",
+              "type": "string",
+              "description": "The hardware device class where the client agent is running.",
+              "default": "",
+              "examples": [
+                "Desktop"
+              ]
+            },
+            "system_identifier": {
+              "$id": "#/properties/ca_web_fetches/properties/agent_info/properties/system_identifier",
+              "type": "string",
+              "description": "Device identifier composed of NIC ID and MAC",
+              "examples": [
+                "BB958313-7283-41E6-9E9F-6A279A5374CA:f8ffc25cfdea"
+              ]
+            }
+          }
+        },
+        "web_fetches": {
+          "$id": "#/properties/web_fetches",
+          "type": "array",
+          "title": "Client agent web fetch operations",
+          "items": {
+            "$id": "#/properties/ca_web_fetches/properties/web_fetches/items",
+            "type": "object",
+            "required": [
+              "report_time",
+              "report_type",
+              "request_url",
+              "is_vpn",
+              "request_start",
+              "request_method",
+              "response_complete",
+              "elapsed",
+              "response_status",
+              "response_headers_length",
+              "response_length",
+              "response_total_length"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "report_time": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/report_time",
+                "type": "integer",
+                "description": "The UNIX epoch timestamp of when the report was generated.",
+                "examples": [
+                  1592982490
+                ]
+              },
+              "report_type": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/report_type",
+                "type": "string",
+                "description": "Type of web_fetch operation",
+                "examples": [
+                  "http"
+                ]
+              },
+              "request_url": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/request_url",
+                "type": "string",
+                "description": "URL of the request",
+                "default": "",
+                "examples": [
+                  "https://myvmware.workspaceair.com"
+                ]
+              },
+              "is_vpn": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/is_vpn",
+                "type": "boolean",
+                "description": "Whether this is a vpn endpoint.",
+                "examples": [
+                  true
+                ]
+              },
+              "request_timeout": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/request_timeout",
+                "type": "boolean",
+                "description": "Whether the endpoint timed out",
+                "examples": [
+                  true
+                ]
+              },
+              "request_start": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/request_start",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "The UNIX epoch timestamp for start of request",
+                "examples": [
+                  1592982490
+                ]
+              },
+              "request_method": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/request_method",
+                "type": "string",
+                "description": "HTTP/HTTPS request method",
+                "default": "",
+                "examples": [
+                  "GET"
+                ]
+              },
+              "response_complete": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/response_complete",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "The UNIX epoch timestamp for completion of response",
+                "examples": [
+                  1592982490
+                ]
+              },
+              "elapsed": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/elapsed",
+                "type": "number",
+                "description": "Seconds elapsed to complete request",
+                "default": 0,
+                "examples": [
+                  1.016994
+                ]
+              },
+              "response_status": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/response_status",
+                "type": "integer",
+                "description": "HTTP/HTTPS response status code",
+                "default": 0,
+                "examples": [
+                  200
+                ]
+              },
+              "response_headers_length": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/response_headers_length",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "Length of response headers in bytes",
+                "default": 0,
+                "examples": [
+                  728
+                ]
+              },
+              "response_length": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/response_length",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "Length of response in bytes",
+                "default": 0,
+                "examples": [
+                  1042
+                ]
+              },
+              "response_total_length": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/response_total_length",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "Length of response and headers in bytes",
+                "examples": [
+                  1770
+                ]
+              },
+              "response_sha256": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/response_sha256",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "SHA-256 session token",
+                "default": "",
+                "examples": [
+                  "4cb78ef8aad9d8f53ab20a0166f1018d184ab832b26e1f5490e69233362b4927"
+                ],
+                "pattern": "^[A-Fa-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

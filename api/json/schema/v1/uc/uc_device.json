@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/uc_device.json",
+  "type": "object",
+  "title": "The UC Device Schema",
+  "required": [
+    "uc_device_infos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "uc_device_infos": {
+      "$id": "#/properties/uc_device_infos",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/uc_device_infos/items",
+        "type": "object",
+        "required": [
+          "application",
+          "uuidtype",
+          "uc_user_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "application": {
+            "$id": "#/properties/uc_device_infos/items/properties/application",
+            "type": "string",
+            "description": "The uc application.",
+            "default": "",
+            "examples": [
+              "ZOOM"
+            ],
+            "pattern": "^[A-Z0-9_]+$"
+          },
+          "uuidtype": {
+            "$id": "#/properties/uc_device_infos/items/properties/uuidtype",
+            "type": "string",
+            "description": "The uuidtype of the uuid field.",
+            "default": "",
+            "examples": [
+              "mac"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "mac": {
+            "$id": "#/properties/uc_device_infos/items/properties/mac",
+            "type": "string",
+            "description": "The MAC address of the UC device.",
+            "default": "",
+            "examples": [
+              "40:83:DE:DF:C3:92"
+            ],
+            "pattern": "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+          },
+          "ip": {
+            "$id": "#/properties/uc_device_infos/items/properties/ip",
+            "$ref": "../definitions.json#/ipv4_address",
+            "description": "The IPv4 address of the uc device."
+          },
+          "data_center": {
+            "$id": "#/properties/uc_device_infos/items/properties/data_center",
+            "type": "string",
+            "description": "The data center of the uc device.",
+            "default": "",
+            "examples": [
+              "DV (Top)"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "connection_type": {
+            "$id": "#/properties/uc_device_infos/items/properties/connection_type",
+            "type": "string",
+            "description": "The connection type of the uc device.",
+            "default": "",
+            "examples": [
+              "DV (Top)"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "camera": {
+            "$id": "#/properties/uc_device_infos/items/properties/camera",
+            "type": "string",
+            "description": "The camera of the uc device.",
+            "default": "",
+            "examples": [
+              "Logitech Webcam C930e"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "microphone": {
+            "$id": "#/properties/uc_device_infos/items/properties/microphone",
+            "type": "string",
+            "description": "The microphone of the uc device.",
+            "default": "",
+            "examples": [
+              "Corsair VOID Wireless Gaming Dongle"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "speaker": {
+            "$id": "#/properties/uc_device_infos/items/properties/speaker",
+            "type": "string",
+            "description": "The speaker of the uc device.",
+            "default": "",
+            "examples": [
+              "Corsair VOID Wireless Gaming Dongle"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "uc_network_type": {
+            "$id": "#/properties/uc_device_infos/items/properties/uc_network_type",
+            "type": "string",
+            "description": "network type of the uc connection",
+            "default": "",
+            "examples": [
+              "Wifi"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "uc_device_type": {
+            "$id": "#/properties/uc_device_infos/items/properties/uc_device_type",
+            "type": "string",
+            "description": "device type used for the uc call",
+            "default": "",
+            "examples": [
+              "Mac"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "uc_pc_name": {
+            "$id": "#/properties/uc_device_infos/items/properties/uc_pc_name",
+            "type": "string",
+            "description": "name of the device used for the uc call",
+            "default": "",
+            "examples": [
+              "Scott’s MacBook Pro (5)"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "uc_user_name": {
+            "$id": "#/properties/uc_device_infos/items/properties/uc_user_name",
+            "type": "string",
+            "description": "user name of the uc device",
+            "default": "",
+            "examples": [
+              "Scott Manning"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "uc_user_id": {
+            "$id": "#/properties/uc_device_infos/items/properties/uc_user_id",
+            "type": "string",
+            "description": "user id of the uc device",
+            "default": "",
+            "examples": [
+              "16780288"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
