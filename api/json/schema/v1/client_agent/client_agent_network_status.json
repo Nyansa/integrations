@@ -1,0 +1,261 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nyansa.com/schemas/v1/client_agent/client_agent_network_status.json",
+  "type": "object",
+  "title": "Client Agent Networks Status Schema",
+  "description": "Schema for networks status reports",
+  "required": [
+    "ca_network_statuses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ca_network_statuses": {
+      "$id": "#/properties/ca_network_statuses",
+      "type": "object",
+      "title": "Client agent networks status reports with agent info",
+      "required": [
+        "agent_info",
+        "network_statuses"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "agent_info": {
+          "$id": "#/properties/ca_network_statuses/properties/agent_info",
+          "type": "object",
+          "description": "The client agent summary info.",
+          "required": [
+            "agent_type",
+            "app_version",
+            "os_version",
+            "build_version",
+            "device_model",
+            "device_class"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "agent_type": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/agent_type",
+              "type": "string",
+              "description": "The operating system where the client agent is running.",
+              "examples": [
+                "android"
+              ]
+            },
+            "app_version": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/app_version",
+              "type": "string",
+              "description": "The client agent version.",
+              "examples": [
+                "1.2.2.0"
+              ]
+            },
+            "os_version": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/os_version",
+              "type": "string",
+              "description": "The operating system version where the client agent is running.",
+              "examples": [
+                "10.0"
+              ]
+            },
+            "build_version": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/build_version",
+              "type": "string",
+              "description": "The operating system build version where the client agent is running.",
+              "examples": [
+                "29"
+              ]
+            },
+            "device_model": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/device_model",
+              "type": "string",
+              "description": "The hardware device model where the client agent is running.",
+              "examples": [
+                "SM_G975F"
+              ]
+            },
+            "device_class": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/device_class",
+              "type": "string",
+              "description": "The hardware device class where the client agent is running.",
+              "examples": [
+                "Phone"
+              ]
+            },
+            "system_identifier": {
+              "$id": "#/properties/ca_network_statuses/properties/agent_info/properties/system_identifier",
+              "type": "string",
+              "description": "Device identifier composed of NIC ID and MAC",
+              "examples": [
+                "BB958313-7283-41E6-9E9F-6A279A5374CA:f8ffc25cfdea"
+              ]
+            }
+          }
+        },
+        "network_statuses": {
+          "$id": "#/properties/ca_network_statuses/properties/network_statuses",
+          "type": "array",
+          "description": "Array of network status reports",
+          "additionalItems": false,
+          "items": {
+            "$id": "#/properties/ca_network_statuses/properties/network_statuses/items",
+            "type": "object",
+            "required": [
+              "report_time",
+              "dns",
+              "interfaces"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "report_time": {
+                "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/report_time",
+                "type": "integer",
+                "description": "The UNIX epoch timestamp of when the report was generated.",
+                "examples": [
+                  1592982490
+                ]
+              },
+              "dns": {
+                "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/dns",
+                "type": "array",
+                "description": "List of DNS IPs",
+                "examples": [
+                  [
+                    "192.168.0.1",
+                    "0.0.0.0"
+                  ]
+                ],
+                "additionalItems": false,
+                "items": {
+                  "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/dns/items",
+                  "type": "string"
+                }
+              },
+              "interfaces": {
+                "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces",
+                "type": "array",
+                "description": "List of network interfaces",
+                "additionalItems": false,
+                "items": {
+                  "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items",
+                  "type": "object",
+                  "description": "Network interface information",
+                  "required": [
+                    "dev",
+                    "identifier",
+                    "type",
+                    "mtu",
+                    "max_rate",
+                    "addresses",
+                    "stats",
+                    "link"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "dev": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/dev",
+                      "type": "string",
+                      "description": "AdapterID",
+                      "examples": [
+                        "wlan0"
+                      ]
+                    },
+                    "identifier": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/identifier",
+                      "type": "string",
+                      "description": "AdapterID and MAC address",
+                      "examples": [
+                        "wlan0:8AAAD09640A1"
+                      ]
+                    },
+                    "type": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/type",
+                      "type": "string",
+                      "description": "Type of adapter",
+                      "examples": [
+                        "Wireless80211"
+                      ]
+                    },
+                    "mtu": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/mtu",
+                      "type": "integer",
+                      "description": "Maximum transmission unit size",
+                      "examples": [
+                        1500
+                      ]
+                    },
+                    "max_rate": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/max_rate",
+                      "type": "integer",
+                      "examples": [
+                        1000000
+                      ]
+                    },
+                    "addresses": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/addresses",
+                      "type": "array",
+                      "description": "IP addresses for interface",
+                      "additionalItems": false,
+                      "items": {
+                        "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/addresses/items",
+                        "type": "string"
+                      }
+                    },
+                    "stats": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/stats",
+                      "type": "object",
+                      "description": "Network interface stats",
+                      "required": [
+                        "in_bytes",
+                        "in_err_bytes",
+                        "out_bytes",
+                        "out_err_bytes"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "in_bytes": {
+                          "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/stats/properties/in_bytes",
+                          "type": "integer",
+                          "examples": [
+                            4805658
+                          ]
+                        },
+                        "in_err_bytes": {
+                          "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/stats/properties/in_err_bytes",
+                          "type": "integer",
+                          "examples": [
+                            0
+                          ]
+                        },
+                        "out_bytes": {
+                          "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/stats/properties/out_bytes",
+                          "type": "integer",
+                          "examples": [
+                            1662950
+                          ]
+                        },
+                        "out_err_bytes": {
+                          "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/stats/properties/out_err_bytes",
+                          "type": "integer",
+                          "examples": [
+                            0
+                          ]
+                        }
+                      }
+                    },
+                    "link": {
+                      "$id": "#/properties/ca_network_statuses/properties/network_statuses/items/properties/interfaces/items/properties/link",
+                      "type": "boolean",
+                      "examples": [
+                        true
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

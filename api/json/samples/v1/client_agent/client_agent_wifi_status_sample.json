@@ -1,0 +1,70 @@
+{
+  "ca_wifi_statuses": {
+    "agent_info": {
+      "agent_type": "android",
+      "os_version": "10.0",
+      "build_version": "29",
+      "device_model": "SM-G975F",
+      "device_class": "Phone",
+      "app_version": "1.2.3.12"
+    },
+    "wifi_statuses": [
+      {
+        "report_time": 1595634180,
+        "system_identifier": "{DFC95BE5-66F7-4388-9F65-5A95F43C5371}:D0C5D3474A89",
+        "connected": [
+          {
+            "beacon": 0,
+            "bssid": "90:5c:44:a1:38:bb",
+            "ssid": "WinFi 5 GHz",
+            "channel": 6,
+            "channel0": 0,
+            "channel1": 0,
+            "security": [
+              "WPAPersonalMixed",
+              "Capability",
+              "Capability",
+              "Capability"
+            ],
+            "phy_modes": [],
+            "rssi": -47,
+            "width": 1,
+            "noise": -101,
+            "snr": 54,
+            "ibss": false,
+            "tx_rate": 866,
+            "tx_power": 0,
+            "is80211mcResponder": false,
+            "isPasspointNetwork": false,
+            "operatorFriendlyName": "",
+            "venueName": "",
+            "timestamp": 2030513188
+          }
+        ],
+        "last_scan": [
+          {
+            "beacon": 0,
+            "channel": 36,
+            "channel0": 0,
+            "channel1": 0,
+            "rssi": -70,
+            "security": [
+              "WPA2Personal"
+            ],
+            "bssid": "90:5C:44:A1:38:CC",
+            "width": 1,
+            "ssid": "WinFi 2.4 GHz",
+            "phy_modes": [
+              "ac"
+            ],
+            "noise": -101,
+            "tx_rate": 866,
+            "snr": 31,
+            "ibss": false
+          }
+        ]
+      }
+    ]
+  }
+}
+  

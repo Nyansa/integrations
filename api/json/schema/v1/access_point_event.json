@@ -11,15 +11,16 @@
     "ap_event_infos": {
       "$id": "#/properties/ap_event_infos",
       "type": "array",
-      "title": "The Aps Event Schema",
+      "title": "The Access Point Event Schema",
       "items": {
         "$id": "#/properties/ap_event_infos/items",
         "type": "object",
         "required": [
           "mac",
-          "timestamp",
+          "name",
           "vendor",
-          "status"
+          "status",
+          "timestamp"
         ],
         "additionalProperties": false,
         "properties": {
@@ -27,14 +28,6 @@
             "$id": "#/properties/ap_event_infos/items/properties/mac",
             "$ref": "definitions.json#/mac_address",
             "description": "The MAC address of the access point."
-          },
-          "timestamp": {
-            "$id": "#/properties/ap_event_infos/items/properties/timestamp",
-            "type": "integer",
-            "description": "The UNIX epoch timestamp of when the access point event was seen.",
-            "examples": [
-              1563230173
-            ]
           },
           "name": {
             "$id": "#/properties/ap_event_infos/items/properties/name",
@@ -58,13 +51,18 @@
           },
           "status": {
             "$id": "#/properties/ap_event_infos/items/properties/status",
+            "$ref": "definitions.json#/ap_event_type",
+            "description": "The status of the access point."
+          },
+          "reason": {
+            "$id": "#/properties/ap_event_infos/items/properties/reason",
             "type": "string",
-            "description": "The status of the access point.",
+            "description": "The reason for the access point status change.",
             "default": "",
             "examples": [
-              "associated"
+              "power cycle"
             ],
-            "pattern": "associated|disassociated|reboot"
+            "pattern": "^(.*)$"
           },
           "location_id": {
             "$id": "#/properties/ap_event_infos/items/properties/location",
@@ -75,6 +73,14 @@
               "ab452de-5d6-a8as-5489cff8c2"
             ],
             "pattern": "^(.*)$"
+          },
+          "timestamp": {
+            "$id": "#/properties/ap_event_infos/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the access point event was seen.",
+            "examples": [
+              1563230173
+            ]
           }
         }
       }

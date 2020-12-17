@@ -1,0 +1,34 @@
+{
+  "device_event_infos":[
+    {
+      "mac": "D4619D5E6379",
+      "ap_mac": "5C5B35AE1720",
+      "disconnect_timestamp": 1587250654,
+      "next_ap_mac": "5C5B35AE16F8",
+      "connect_timestamp": 1587250640,
+      "rf_band": "24",
+      "vendor": "Apple",
+      "model": "iPhone 7",
+      "os": "13.3",
+      "event_type": "roam",
+      "essid": "Shopping_2.4",
+      "location_id": "acddcc1a-0637-4845-a7f4-cadf1b3f5e79",
+      "timestamp": 1587250654,
+    },
+    {
+      "mac": "64c753689117",
+      "ap_mac": "5C5B354F51A3",
+      "disconnect_timestamp": 1587250654,
+      "next_ap_mac": "000000000000",
+      "connect_timestamp": 1587248291,
+      "band": "24",
+      "vendor": "Apple",
+      "model": "iPhone XS Max",
+      "os": "13.3.1",
+      "event_type": "inactive",
+      "essid": "Shopping_2.4",
+      "location_id": "8e2d3bd8-9efe-41d8-b627-a9459b245509",
+      "timestamp": 1587250654,
+    }
+  ]
+}

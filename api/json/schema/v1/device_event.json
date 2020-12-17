@@ -17,47 +17,59 @@
         "type": "object",
         "required": [
           "mac",
-          "timestamp",
-          "model",
-          "os",
-          "manufacture",
-          "vendor",
-          "wlan",
           "ap_mac",
           "rf_band",
-          "ssid",
-          "next_ap",
-          "status"
+          "essid",
+          "event_type",
+          "timestamp"
         ],
         "additionalProperties": false,
         "properties": {
           "mac": {
             "$id": "#/properties/device_event_infos/items/properties/mac",
             "$ref": "definitions.json#/mac_address",
-            "description": "The device MAC address."
+            "description": "The MAC address of the device."
           },
-          "timestamp": {
-            "$id": "#/properties/device_event_infos/items/properties/timestamp",
+          "ap_mac": {
+            "$id": "#/properties/device_event_infos/items/properties/ap_mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point the client roamed or disconnected from."
+          },
+          "disconnect_timestamp": {
+            "$id": "#/properties/device_event_infos/items/properties/disconnect_timestamp",
             "type": "integer",
-            "description": "The UNIX epoch timestamp of when the device event was seen.",
+            "description": "The UNIX epoch timestamp of when the device disconnected from access point.",
+            "examples": [
+              1563230000
+            ]
+          },
+          "next_ap_mac": {
+            "$id": "#/properties/device_event_infos/items/properties/next_ap_mac",
+            "$ref": "definitions.json#/mac_address",
+            "description": "The MAC address of the access point the client roamed to."
+          },
+          "connect_timestamp": {
+            "$id": "#/properties/device_event_infos/items/properties/connect_timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the device connected to next access point.",
             "examples": [
               1563230173
             ]
           },
-          "vendor": {
-            "$id": "#/properties/device_event_infos/items/properties/vendor",
-            "type": "string",
-            "description": "The name of the device vendor.",
-            "default": "",
-            "examples": [
-              "Cisco"
-            ],
-            "pattern": "^(.*)$"
-          },
           "rf_band": {
             "$id": "#/properties/device_event_infos/items/properties/rf_band",
             "$ref": "definitions.json#/rf_band",
-            "description": "The device RF band."
+            "description": "The RF band used by the device."
+          },
+          "vendor": {
+            "$id": "#/properties/device_event_infos/items/properties/next_ap_mac",
+            "type": "string",
+            "description": "The device vendor.",
+            "default": "",
+            "examples": [
+              "Apple"
+            ],
+            "pattern": "^(.*)$"
           },
           "model": {
             "$id": "#/properties/device_event_infos/items/properties/model",
@@ -79,64 +91,38 @@
             ],
             "pattern": "^(.*)$"
           },
-          "manufacture": {
-            "$id": "#/properties/device_event_infos/items/properties/manufacture",
+          "event_type": {
+            "$id": "#/properties/device_event_infos/items/properties/event_type",
+            "$ref": "definitions.json#/device_event_type",
+            "description": "The device event type."
+          },
+          "essid": {
+            "$id": "#/properties/device_event_infos/items/properties/essid",
             "type": "string",
-            "description": "The device manufacture.",
+            "description": "The ESSID.",
             "default": "",
             "examples": [
-              "Apple"
+              "corp"
             ],
             "pattern": "^(.*)$"
-          },
-          "ap_mac": {
-            "$id": "#/properties/device_event_infos/items/properties/ap_mac",
-            "$ref": "definitions.json#/mac_address",
-            "description": "The MAC address of the access point the client roamed or disconnected from."
-          },
-          "wlan": {
-            "$id": "#/properties/device_event_infos/items/properties/wlan",
-            "type": "string",
-            "description": "The WLAN ID.",
-            "default": "",
-            "examples": [
-              "c9f5bcc9-cf8c-434e-b8de-148420600b71"
-            ]
-          },
-          "ssid": {
-            "$id": "#/properties/device_event_infos/items/properties/ssid",
-            "type": "string",
-            "description": "The SSID used by the device.",
-            "default": "",
-            "examples": [
-              "eduroam"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "status": {
-            "$id": "#/properties/device_event_infos/items/properties/status",
-            "type": "string",
-            "description": "The status of the device.",
-            "default": "",
-            "examples": [
-              "associated"
-            ],
-            "pattern": "associated|disassociated|roam"
-          },
-          "next_ap": {
-            "$id": "#/properties/device_event_infos/items/properties/next_ap",
-            "$ref": "definitions.json#/mac_address",
-            "description": "The MAC address of the access point the device is joining."
           },
           "location_id": {
             "$id": "#/properties/device_event_infos/items/properties/location",
             "type": "string",
-            "description": "The vendor location ID of the device.",
+            "description": "The vendor location ID of the access point.",
             "default": "",
             "examples": [
               "ab452de-5d6-a8as-5489cff8c2"
             ],
             "pattern": "^(.*)$"
+          },
+          "timestamp": {
+            "$id": "#/properties/device_event_infos/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the event was sent by controller.",
+            "examples": [
+              1563230173
+            ]
           }
         }
       }

@@ -1,0 +1,416 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nyansa.com/schemas/v1/uc_device_stats.json",
+  "type": "object",
+  "title": "The UC Device Stats Schema",
+  "required": [
+    "uc_device_stats"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "uc_device_stats": {
+      "$id": "#/properties/uc_device_stats",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/uc_device_stats/items",
+        "type": "object",
+        "required": [
+          "application",
+          "uuid",
+          "uuidtype",
+          "timestamp"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "application": {
+            "$id": "#/properties/uc_device_stats/items/properties/application",
+            "type": "string",
+            "description": "The uc application.",
+            "default": "",
+            "examples": [
+              "zoom"
+            ],
+            "pattern": "^[A-Z0-9_]+$"
+          },
+          "uuid": {
+            "$id": "#/properties/uc_device_stats/items/properties/uuid",
+            "type": "string",
+            "description": "The uuid of the uc device.",
+            "default": "",
+            "examples": [
+              "40:83:DE:DF:C3:92"
+            ]
+          },
+          "uuidtype": {
+            "$id": "#/properties/uc_device_stats/items/properties/uuidtype",
+            "type": "string",
+            "description": "The uuidtype of the uuid field.",
+            "default": "",
+            "examples": [
+              "mac"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "timestamp": {
+            "$id": "#/properties/uc_device_stats/items/properties/timestamp",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of when the device status was collected.",
+            "examples": [
+              1563230173
+            ]
+          },
+          "pollingtime": {
+            "$id": "#/properties/uc_device_stats/items/properties/pollingtime",
+            "type": "integer",
+            "description": "The UNIX epoch timestamp of the time of the polling & the latest polled data point in this cycle.  Ideally should be a 15min multiple.",
+            "examples": [
+              1563229800
+            ]
+          },
+          "tx_bytes": {
+            "$id": "#/properties/uc_device_stats/items/properties/tx_bytes",
+            "type": "integer",
+            "description": "The transmit byte count of the device.",
+            "default": 0,
+            "examples": [
+              740989
+            ]
+          },
+          "rx_bytes": {
+            "$id": "#/properties/uc_device_stats/items/properties/rx_bytes",
+            "type": "integer",
+            "description": "The receive byte count of the device.",
+            "default": 0,
+            "examples": [
+              1611240
+            ]
+          },
+          "tx_packets": {
+            "$id": "#/properties/uc_device_stats/items/properties/tx_packets",
+            "type": "integer",
+            "description": "The transmite packet count of the device.",
+            "default": 0,
+            "examples": [
+              2452
+            ]
+          },
+          "rx_packets": {
+            "$id": "#/properties/uc_device_stats/items/properties/rx_packets",
+            "type": "integer",
+            "description": "The receive packet count of the device.",
+            "default": 0,
+            "examples": [
+              4416
+            ]
+          },
+          "system_max_cpu_usage_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/system_max_cpu_usage_pct",
+            "type": "integer",
+            "description": "The max system CPU usage in this interval.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "app_max_cpu_usage_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/zoom_max_cpu_usage_pct",
+            "type": "integer",
+            "description": "The max system CPU usage by this UC app in this interval.",
+            "default": 0,
+            "examples": [
+              4
+            ]
+          },
+          "screenshare_in_avg_loss_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_in_avg_loss_pct",
+            "type": "number",
+            "description": "The screenshare input packet loss percentage.",
+            "default": 0,
+            "examples": [
+              11
+            ]
+          },
+          "screenshare_in_avg_latency_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_in_avg_latency_ms",
+            "type": "integer",
+            "description": "The screenshare input average latency in ms.",
+            "default": 0,
+            "examples": [
+              49
+            ]
+          },
+          "screenshare_in_avg_jitter_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_in_avg_jitter_ms",
+            "type": "integer",
+            "description": "The screenshare input average jitter in ms.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "screenshare_in_avg_bitrate_bps": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_in_avg_bitrate_bps",
+            "type": "integer",
+            "description": "The screenshare input average bitrate in bps.",
+            "default": 0,
+            "examples": [
+              56000
+            ]
+          },
+          "screenshare_in_avg_framerate_fps": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_in_avg_framerate_fps",
+            "type": "integer",
+            "description": "The screenshare input average framerate in fps.",
+            "default": 0,
+            "examples": [
+              56
+            ]
+          },
+          "screenshare_in_resolution": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_in_resolution",
+            "type": "string",
+            "description": "The screenshare input resolution of the uc device.",
+            "default": "",
+            "examples": [
+              "1280*720"
+            ]
+          },
+          "screenshare_out_avg_loss_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_out_avg_loss_pct",
+            "type": "number",
+            "description": "The screenshare output packet loss percentage.",
+            "default": 0,
+            "examples": [
+              0.4
+            ]
+          },
+          "screenshare_out_avg_latency_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_out_avg_latency_ms",
+            "type": "integer",
+            "description": "The screenshare output average latency in ms.",
+            "default": 0,
+            "examples": [
+              49
+            ]
+          },
+          "screenshare_out_avg_jitter_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_out_avg_jitter_ms",
+            "type": "integer",
+            "description": "The screenshare output average jitter in ms.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "screenshare_out_avg_bitrate_bps": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_out_avg_bitrate_bps",
+            "type": "integer",
+            "description": "The screenshare output average bitrate in bps.",
+            "default": 0,
+            "examples": [
+              56000
+            ]
+          },
+          "screenshare_out_avg_framerate_fps": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_out_avg_framerate_fps",
+            "type": "integer",
+            "description": "The screenshare output average framerate in fps.",
+            "default": 0,
+            "examples": [
+              56
+            ]
+          },
+          "screenshare_out_resolution": {
+            "$id": "#/properties/uc_device_stats/items/properties/screenshare_out_resolution",
+            "type": "string",
+            "description": "The screenshare output resolution of the uc device.",
+            "default": "",
+            "examples": [
+              "1280*720"
+            ]
+          },
+          "audio_in_avg_loss_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_in_avg_loss_pct",
+            "type": "number",
+            "description": "The audio input packet loss percentage.",
+            "default": 0,
+            "examples": [
+              1.6
+            ]
+          },
+          "audio_in_avg_latency_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_in_avg_latency_ms",
+            "type": "integer",
+            "description": "The audio input average latency in ms.",
+            "default": 0,
+            "examples": [
+              49
+            ]
+          },
+          "audio_in_avg_jitter_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_in_avg_jitter_ms",
+            "type": "integer",
+            "description": "The audio input average jitter in ms.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "audio_in_avg_bitrate_bps": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_in_avg_bitrate_bps",
+            "type": "integer",
+            "description": "The audio input average bitrate in bps.",
+            "default": 0,
+            "examples": [
+              56000
+            ]
+          },
+          "audio_out_avg_loss_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_out_avg_loss_pct",
+            "type": "number",
+            "description": "The audio output packet loss percentage.",
+            "default": 0,
+            "examples": [
+              5.5
+            ]
+          },
+          "audio_out_avg_latency_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_out_avg_latency_ms",
+            "type": "integer",
+            "description": "The audio output average latency in ms.",
+            "default": 0,
+            "examples": [
+              49
+            ]
+          },
+          "audio_out_avg_jitter_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_out_avg_jitter_ms",
+            "type": "integer",
+            "description": "The audio output average jitter in ms.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "audio_out_avg_bitrate_bps": {
+            "$id": "#/properties/uc_device_stats/items/properties/audio_out_avg_bitrate_bps",
+            "type": "integer",
+            "description": "The audio output average bitrate in bps.",
+            "default": 0,
+            "examples": [
+              56000
+            ]
+          },
+          "video_in_avg_loss_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_in_avg_loss_pct",
+            "type": "number",
+            "description": "The video input packet loss percentage.",
+            "default": 0,
+            "examples": [
+              10.3
+            ]
+          },
+          "video_in_avg_latency_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_in_avg_latency_ms",
+            "type": "integer",
+            "description": "The video input average latency in ms.",
+            "default": 0,
+            "examples": [
+              49
+            ]
+          },
+          "video_in_avg_jitter_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_in_avg_jitter_ms",
+            "type": "integer",
+            "description": "The video input average jitter in ms.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "video_in_avg_bitrate_bps": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_in_avg_bitrate_bps",
+            "type": "integer",
+            "description": "The video input average bitrate in bps.",
+            "default": 0,
+            "examples": [
+              56000
+            ]
+          },
+          "video_in_avg_framerate_fps": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_in_avg_framerate_fps",
+            "type": "integer",
+            "description": "The video input average framerate in fps.",
+            "default": 0,
+            "examples": [
+              56
+            ]
+          },
+          "video_in_resolution": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_in_resolution",
+            "type": "string",
+            "description": "The video input resolution of the uc device.",
+            "default": "",
+            "examples": [
+              "1280*720"
+            ]
+          },
+          "video_out_avg_loss_pct": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_out_avg_loss_pct",
+            "type": "number",
+            "description": "The video output packet loss percentage.",
+            "default": 0,
+            "examples": [
+              10.4
+            ]
+          },
+          "video_out_avg_latency_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_out_avg_latency_ms",
+            "type": "integer",
+            "description": "The video output average latency in ms.",
+            "default": 0,
+            "examples": [
+              49
+            ]
+          },
+          "video_out_avg_jitter_ms": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_out_avg_jitter_ms",
+            "type": "integer",
+            "description": "The video output average jitter in ms.",
+            "default": 0,
+            "examples": [
+              10
+            ]
+          },
+          "video_out_avg_bitrate_bps": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_out_avg_bitrate_bps",
+            "type": "integer",
+            "description": "The video output average bitrate in bps.",
+            "default": 0,
+            "examples": [
+              56000
+            ]
+          },
+          "video_out_avg_framerate_fps": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_out_avg_framerate_fps",
+            "type": "integer",
+            "description": "The video output average framerate in fps.",
+            "default": 0,
+            "examples": [
+              56
+            ]
+          },
+          "video_out_resolution": {
+            "$id": "#/properties/uc_device_stats/items/properties/video_out_resolution",
+            "type": "string",
+            "description": "The video output resolution of the uc device.",
+            "default": "",
+            "examples": [
+              "1280*720"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "uc_device_infos": [
+    {
+      "uuidtype": "mac",
+      "application": "ZOOM",
+      "data_center": "DV (Top)",
+      "connection_type": "UDP",
+      "mac": "8C:85:90:B9:DC:F9",
+      "ip": "10.64.139.16",
+      "camera": "Logitech Webcam C930e",
+      "microphone": "Corsair VOID Wireless Gaming Dongle",
+      "speaker": "Corsair VOID Wireless Gaming Dongle",
+      "uc_network_type": "Wifi",
+      "uc_user_name": "Scott Manning",
+      "uc_user_id": "16780288"
+    },
+    {
+      "uuidtype": "mac",
+      "application": "ZOOM",
+      "data_center": "DV (Top)",
+      "connection_type": "UDP",
+      "mac": "8C:85:90:B9:DC:F9",
+      "ip": "10.64.139.16",
+      "microphone": "MacBook Pro Microphone (MacBook Pro Microphone)",
+      "speaker": "MacBook Pro Speakers (MacBook Pro Speakers)",
+      "uc_network_type": "Wifi",
+      "uc_user_name": "Marvin Chan",
+      "uc_user_id": "16779264"
+    }
+  ]
+}

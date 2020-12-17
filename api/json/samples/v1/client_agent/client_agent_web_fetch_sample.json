@@ -1,0 +1,56 @@
+{ 
+  "ca_web_fetches": {
+    "agent_info": {
+      "agent_type": "windows",
+      "os_version": "Microsoft Windows 10 Pro",
+      "build_version": "18363",
+      "device_model": "System Product Name",
+      "device_class": "Desktop",
+      "app_version": "1.2.3.11"
+    },
+    "web_fetches": [
+      {
+        "report_time": 1591128501,
+        "report_type": "https",
+        "request_url": "myvmware.workspaceair.com",
+        "request_start": 1591135701,
+        "request_method": "GET",
+        "response_complete": 1591135702,
+        "elapsed": 1.016994,
+        "response_status": 200,
+        "response_headers_length": 728,
+        "response_length": 1042,
+        "response_total_length": 1770,
+        "response_sha256": "4cb78ef8aad9d8f53ab20a0166f1018d184ab832b26e1f5490e69233362b4927"
+      },
+      {
+        "report_time": 1594969275,
+        "report_type": "http",
+        "request_url": "www.google.com",
+        "request_start": 1594976475,
+        "request_method": "GET",
+        "response_complete": 1594976485,
+        "elapsed": 10.395916000000001,
+        "response_status": 200,
+        "response_headers_length": 651,
+        "response_length": 46861,
+        "response_total_length": 47512,
+        "response_sha256": "f7bbc27e54c5ffe2ef55e92fa4291b8fb502fb441882ba591b4b4d576ff6f106"
+      },
+      {
+        "report_time": 1594969400,
+        "report_type": "https",
+        "request_url": "www.google.com",
+        "request_start": 1594976600,
+        "request_method": "HEAD",
+        "response_complete": 1594976600,
+        "elapsed": 0.14144,
+        "response_status": 200,
+        "response_headers_length": 855,
+        "response_length": null,
+        "response_total_length": null,
+        "response_sha256": "37aed7d0b603d7759e8192f99de486cb37c83249e2522cb531cecb40ecdb090e"
+      }
+    ]
+  }
+}

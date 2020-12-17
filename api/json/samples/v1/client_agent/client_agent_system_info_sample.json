@@ -1,0 +1,70 @@
+{
+  "ca_system_infos": {
+    "agent_info": {
+      "agent_type": "android",
+      "os_version": "0.0",
+      "build_version": "29",
+      "device_model": "SM-G975F",
+      "device_class": "Phone",
+      "app_version": "1.2.2.0"
+    },
+    "system_infos": [
+      {
+        "report_time": 1592982490,
+        "system_version": "Android 0.0",
+        "wifi_hardware": "exynos9820",
+        "wifi_driver": "G975FXXS6CTE6,G975FXXS6CTE6",
+        "system_memory": {
+          "free": 3909742592,
+          "active": 7762542592
+        },
+        "power_source": "Usb",
+        "batteries": [
+          {
+            "max_capacity": 100,
+            "health": "good",
+            "current_capacity": 55,
+            "is_charged": false,
+            "type": "Mobile Battery",
+            "is_charging": true,
+            "name": "Intern Battery"
+          }
+        ],
+        "system_cpus": 8,
+        "system_uptime": 19488,
+        "system_identifier": "wlan0:A8DB03D9310C",
+        "cpu_load": {
+          "total_load": 0
+        }
+      },
+      {
+        "report_time": 1592982499,
+        "system_version": "Android 0.0",
+        "wifi_hardware": "exynos9820",
+        "wifi_driver": "G975FXXS6CTE6,G975FXXS6CTE6",
+        "system_memory": {
+          "free": 3909742592,
+          "active": 7762542592
+        },
+        "power_source": "Usb",
+        "batteries": [
+          {
+            "max_capacity": 100,
+            "health": "good",
+            "current_capacity": 45,
+            "is_charged": false,
+            "type": "Mobile Battery",
+            "is_charging": true,
+            "name": "Intern Battery"
+          }
+        ],
+        "system_cpus": 8,
+        "system_uptime": 19497,
+        "system_identifier": "wlan0:A8DB03D9310C",
+        "cpu_load": {
+          "total_load": 12
+        }
+      }
+    ]
+  }
+}

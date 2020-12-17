@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nyansa.com/schemas/v1/client_agent/client_agent_dns.json",
+  "type": "object",
+  "title": "Client Agent DNS Schema",
+  "description": "Schema for DNS lookup reports",
+  "required": [
+    "ca_dns_lookups"
+  ],
+  "properties": {
+    "ca_dns_lookups": {
+      "$id": "#/properties/ca_dns_lookups",
+      "type": "object",
+      "title": "Client agent DNS lookups with agent info",
+      "required": [
+        "agent_info",
+        "dns_lookups"
+      ],
+      "properties": {
+        "agent_info": {
+          "$id": "#/properties/ca_dns_lookups/properties/agent_info",
+          "type": "object",
+          "description": "The client agent summary info.",
+          "required": [
+            "agent_type",
+            "os_version",
+            "build_version",
+            "device_model",
+            "device_class",
+            "app_version"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "agent_type": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/agent_type",
+              "type": "string",
+              "description": "The operating system where the client agent is running.",
+              "examples": [
+                "windows"
+              ]
+            },
+            "os_version": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/os_version",
+              "type": "string",
+              "description": "The operating system version where the client agent is running.",
+              "examples": [
+                "Microsoft Windows 10 Pro"
+              ]
+            },
+            "build_version": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/build_version",
+              "type": "string",
+              "description": "The operating system build version where the client agent is running.",
+              "examples": [
+                "18363"
+              ]
+            },
+            "device_model": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/device_model",
+              "type": "string",
+              "description": "The hardware device model where the client agent is running.",
+              "examples": [
+                "System Product Name"
+              ]
+            },
+            "device_class": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/device_class",
+              "type": "string",
+              "description": "The hardware device class where the client agent is running.",
+              "examples": [
+                "Desktop"
+              ]
+            },
+            "app_version": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/app_version",
+              "type": "string",
+              "description": "The client agent version.",
+              "examples": [
+                "1.2.3.12"
+              ]
+            },
+            "system_identifier": {
+              "$id": "#/properties/ca_dns_lookups/properties/agent_info/properties/system_identifier",
+              "type": "string",
+              "description": "Device identifier composed of NIC ID and MAC",
+              "examples": [
+                "BB958313-7283-41E6-9E9F-6A279A5374CA:f8ffc25cfdea"
+              ]
+            }
+          }
+        },
+        "dns_lookups": {
+          "$id": "#/properties/ca_dns_lookups/properties/dns_lookups",
+          "type": "array",
+          "title": "Client agent DNS lookups",
+          "additionalItems": true,
+          "items": {
+            "$id": "#/properties/ca_dns_lookups/properties/dns_lookups/items",
+            "type": "object",
+            "required": [
+              "report_time",
+              "status",
+              "target",
+              "latency"
+            ],
+            "properties": {
+              "report_time": {
+                "$id": "#/properties/ca_dns_lookups/properties/dns_lookups/items/properties/report_time",
+                "type": "integer",
+                "description": "The UNIX epoch timestamp of when the report was generated.",
+                "examples": [
+                  1595634180
+                ]
+              },
+              "status": {
+                "$id": "#/properties/ca_dns_lookups/properties/dns_lookups/items/properties/status",
+                "type": "boolean",
+                "description": "Resolvable or not.",
+                "examples": [
+                  true
+                ]
+              },
+              "target": {
+                "$id": "#/properties/ca_dns_lookups/properties/dns_lookups/items/properties/target",
+                "type": "string",
+                "description": "URL or hostname used for lookup.",
+                "examples": [
+                  "www.google.com"
+                ]
+              },
+              "result": {
+                "$id": "#/properties/ca_dns_lookups/properties/dns_lookups/items/properties/result",
+                "type": "string",
+                "description": "Resolved IP address.",
+                "examples": [
+                  "172.217.6.68"
+                ]
+              },
+              "latency": {
+                "$id": "#/properties/ca_dns_lookups/properties/dns_lookups/items/properties/latency",
+                "type": "number",
+                "description": "DNS lookup time taken in ms.",
+                "examples": [
+                  0.25
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

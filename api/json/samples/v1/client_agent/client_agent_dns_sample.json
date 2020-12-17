@@ -1,0 +1,29 @@
+{
+  "ca_dns_lookups": {
+    "agent_info": {
+      "agent_type": "windows",
+      "os_version": "Microsoft Windows 10 Pro",
+      "build_version": "18363",
+      "device_model": "System Product Name",
+      "device_class": "Desktop",
+      "app_version": "1.2.3.12"
+    },
+    "dns_lookups": [
+      {
+        "report_time": 1595634180,
+        "status": true,
+        "target": "www.google.com",
+        "result": "172.217.6.68",
+        "latency": 0.250
+      },
+      {
+        "report_time": 1595634439,
+        "status": true,
+        "target": "source.vmware.com",
+        "result": "10.113.62.109",
+        "latency": 92.950
+      }
+    ]
+  }
+}
+  

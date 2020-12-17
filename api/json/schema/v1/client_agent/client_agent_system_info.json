@@ -1,0 +1,412 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nyansa.com/schemas/v1/client_agent/client_agent_system_info.json",
+  "type": "object",
+  "title": "The client agent system info schema",
+  "required": [
+    "ca_system_infos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ca_system_infos": {
+      "$id": "#/properties/ca_system_infos",
+      "type": "object",
+      "title": "The client agent system infos schema",
+      "required": [
+        "agent_info",
+        "system_infos"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "agent_info": {
+          "$id": "#/properties/ca_system_infos/properties/agent_info",
+          "type": "object",
+          "description": "The client agent version info.",
+          "required": [
+            "agent_type",
+            "os_version",
+            "build_version",
+            "device_model",
+            "device_class",
+            "app_version"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "agent_type": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/agent_type",
+              "type": "string",
+              "description": "The operating system where the client agent is running.",
+              "default": "",
+              "examples": [
+                "macOS"
+              ]
+            },
+            "os_version": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/os_version",
+              "type": "string",
+              "description": "The operating system version where the client agent is running.",
+              "default": "",
+              "examples": [
+                "10.15.5"
+              ]
+            },
+            "build_version": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/build_version",
+              "type": "string",
+              "description": "The operating system build version where the client agent is running.",
+              "default": "",
+              "examples": [
+                "19F96"
+              ]
+            },
+            "device_model": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/device_model",
+              "type": "string",
+              "description": "The hardware device model where the client agent is running.",
+              "default": "",
+              "examples": [
+                "iMac19,1"
+              ]
+            },
+            "device_class": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/device_class",
+              "type": "string",
+              "description": "The hardware device class where the client agent is running.",
+              "default": "",
+              "examples": [
+                "Desktop"
+              ]
+            },
+            "app_version": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/app_version",
+              "type": "string",
+              "description": "The client agent version.",
+              "examples": [
+                "1.2.3 132.11"
+              ]
+            },
+            "system_identifier": {
+              "$id": "#/properties/ca_system_infos/properties/agent_info/properties/system_identifier",
+              "type": "string",
+              "description": "Device identifier composed of NIC ID and MAC",
+              "examples": [
+                "BB958313-7283-41E6-9E9F-6A279A5374CA:f8ffc25cfdea"
+              ]
+            }
+          }
+        },
+        "system_infos": {
+          "$id": "#/properties/ca_system_infos/properties/system_infos",
+          "type": "array",
+          "title": "Client agent web fetch operations",
+          "items": {
+            "$id": "#/properties/ca_system_infos/properties/system_infos/items",
+            "type": "object",
+            "required": [
+              "report_time",
+              "system_version",
+              "wifi_hardware",
+              "wifi_driver",
+              "system_memory",
+              "system_cpus",
+              "system_uptime",
+              "system_identifier"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "report_time": {
+                "$id": "#/properties/ca_web_fetches/properties/web_fetches/items/properties/report_time",
+                "type": "integer",
+                "description": "The UNIX epoch timestamp of when the report was generated.",
+                "examples": [
+                  1592982490
+                ]
+              },
+              "system_hostname": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_hostname",
+                "type": "string",
+                "description": "The hostname of the system.",
+                "examples": [
+                  "imac.local"
+                ]
+              },
+              "system_version": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_version",
+                "type": "string",
+                "description": "The system version description.",
+                "default": "",
+                "examples": [
+                  "macOS X Version 10.15.5 (Build 19F96)"
+                ]
+              },
+              "wifi_hardware": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/wifi_hardware",
+                "type": "string",
+                "description": "The Wi-Fi hardware vendor info.",
+                "default": "",
+                "examples": [
+                  "vendorid: 0x14e4 deviceid: 0x43b1 radiorev: 0x42069 chipnum: 0x4352 chiprev: 0x3 corerev: 0x2a boardid: 0x85ba boardvendor: 0x106b boardrev: 0x1180 driverrev: 0x715be21 ucoderev: 0x0 bus: 0x1 "
+                ]
+              },
+              "wifi_driver": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/wifi_driver",
+                "type": "string",
+                "description": "The Wi-Fi driver info.",
+                "default": "",
+                "examples": [
+                  "Broadcom BCM43xx 1.0 (7.21.190.33 AirPortDriverBrcm4360-1601.1)"
+                ]
+              },
+              "system_memory": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_memory",
+                "type": "object",
+                "description": "Info on the system memory.",
+                "required": [
+                  "free",
+                  "active"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "free": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_memory/properties/free",
+                    "type": "integer",
+                    "description": "The amount of free memory in kilobytes.",
+                    "default": 0,
+                    "examples": [
+                      8508296
+                    ]
+                  },
+                  "wired": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_memory/properties/wired",
+                    "type": "integer",
+                    "description": "The amount of wired memory in use in kilobytes.",
+                    "default": 0,
+                    "examples": [
+                      1154722
+                    ]
+                  },
+                  "active": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_memory/properties/active",
+                    "type": "integer",
+                    "description": "The amount of active memory in use in kilobytes",
+                    "default": 0,
+                    "examples": [
+                      3915051
+                    ]
+                  },
+                  "inactive": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_memory/properties/inactive",
+                    "type": "integer",
+                    "description": "The amount of inactive memory in kilobytes.",
+                    "default": 0,
+                    "examples": [
+                      3198036
+                    ]
+                  },
+                  "page": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_memory/properties/page",
+                    "type": "integer",
+                    "description": "The amount of memory used for paging in kilobytes.",
+                    "default": 0,
+                    "examples": [
+                      4096
+                    ]
+                  }
+                }
+              },
+              "power_source": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/power_source",
+                "type": "string",
+                "description": "The hardware power source.",
+                "examples": [
+                  "Battery"
+                ]
+              },
+              "batteries": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries",
+                "type": "array",
+                "items": {
+                  "$id": "#/properties/batteries/items",
+                  "type": "object",
+                  "required": [
+                  ],
+                  "additionalProperties": true,
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/name",
+                      "type": "string",
+                      "description": "The name of the battery.",
+                      "examples": [
+                          "Intern Battery"
+                      ]
+                    },
+                    "health": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/health",
+                      "type": "string",
+                      "description": "The health of the battery.",
+                      "examples": [
+                          "good"
+                      ]
+                    },
+                    "max_capacity": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/max_capacity",
+                      "type": "integer",
+                      "description": "The maximum capcity of the battery.",
+                      "default": 0,
+                      "examples": [
+                          100
+                      ]
+                    },
+                    "current_capacity": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/current_capacity",
+                      "type": "integer",
+                      "description": "The current battery capacity.",
+                      "default": 0,
+                      "examples": [
+                          55
+                      ]
+                    },
+                    "is_charged": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/is_charged",
+                      "type": "boolean",
+                      "description": "Indicate if the battery is fully charged.",
+                      "default": false,
+                      "examples": [
+                          false
+                      ]
+                    },
+                    "type": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/type",
+                      "type": "string",
+                      "description": "The battery type.",
+                      "default": "",
+                      "examples": [
+                          "Mobile Battery"
+                      ]
+                    },
+                    "is_charging": {
+                      "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/batteries/items/properties/is_charging",
+                      "type": "boolean",
+                      "description": "Indicate if the battery is being charged.",
+                      "default": false,
+                      "examples": [
+                          true
+                      ]
+                    }
+                  }
+                }
+              },
+              "system_cpus": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_cpus",
+                "type": "integer",
+                "description": "The number of CPUs in the system.",
+                "default": 1,
+                "examples": [
+                  16
+                ]
+              },
+              "load_average": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/load_average",
+                "type": "array",
+                "description": "The average load of the system.",
+                "items": {
+                  "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/load_average/items",
+                  "type": "number",
+                  "examples": [
+                    2.529,
+                    2.753
+                  ]
+                }
+              },
+              "system_uptime": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_uptime",
+                "type": "number",
+                "description": "The system uptime in seconds.",
+                "default": 0,
+                "examples": [
+                  16557
+                ]
+              },
+              "system_identifier": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_identifier",
+                "type": "string",
+                "description": "The system identifier.",
+                "default": "",
+                "examples": [
+                  "en1:2cfda1610975"
+                ]
+              },
+              "system_thermal": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/system_thermal",
+                "type": "integer",
+                "description": "The system temperature.",
+                "default": 0,
+                "examples": [
+                  0
+                ]
+              },
+              "cpu_load": {
+                "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/cpu_load",
+                "type": "object",
+                "description": "The CPU load info.",
+                "additionalProperties": false,
+                "properties": {
+                  "total_load": {
+                    "$id": "#/properties/cpu_load/properties/total_load",
+                    "type": "number",
+                    "description": "The total CPU load.",
+                    "minimum": 0.0,
+                    "examples": [
+                      0.5
+                    ]
+                  },
+                  "nice": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/cpu_load/properties/nice",
+                    "type": "number",
+                    "description": "CPU load that occurred while executing at the user level with nice priority.",
+                    "default": 0.0,
+                    "minimum": 0.0,
+                    "examples": [
+                      0.0
+                    ]
+                  },
+                  "kern": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/cpu_load/properties/kern",
+                    "type": "number",
+                    "description": "CPU load that occurred while executing at the kernel level.",
+                    "default": 0.0,
+                    "minimum": 0.0,
+                    "examples": [
+                      0.012005685733553812
+                    ]
+                  },
+                  "idle": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/cpu_load/properties/idle",
+                    "type": "number",
+                    "description": "CPU or CPUs were idle and the system did not have an outstanding disk I/O request.",
+                    "default": 0.0,
+                    "minimum": 0.0,
+                    "examples": [
+                      0.9592227735862909
+                    ]
+                  },
+                  "user": {
+                    "$id": "#/properties/ca_system_infos/properties/system_infos/items/properties/cpu_load/properties/user",
+                    "type": "number",
+                    "description": "CPU load that occurred while executing at the user level (application).",
+                    "default": 0.0,
+                    "minimum": 0.0,
+                    "examples": [
+                      0.028771540680155215
+                    ]
+                  }
+                
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
